@@ -13,7 +13,7 @@ interface Props {
 export function BackButton({ onPress }: Props) {
     return (
         <TouchableOpacity
-            style={styles.fechar}
+            style={styles.back}
             onPress={onPress}
         >
             <Image style={styles.img} source={back}></Image>

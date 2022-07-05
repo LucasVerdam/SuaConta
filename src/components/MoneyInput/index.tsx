@@ -11,7 +11,7 @@ interface Props {
     onChangeText: any;
 }
 
-export function MoneyInput({ text, subText, placeholder, maxLenght = 8, onChangeText }: Props) {
+export function MoneyInput({ text, subText, placeholder, maxLenght = 7, onChangeText }: Props) {
     return (
         <View style={{ marginBottom: 30 }}>
             <Text style={styles.txt1}>{text}</Text>

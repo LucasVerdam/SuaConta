@@ -7,7 +7,7 @@ import { NextButton } from '../../../components/NextButton';
 import { BackButton } from '../../../components/BackButton';
 import { NamesInput } from '../../../components/NamesInput';
 
-import { global } from '../../../context/NomeContext';
+import { global } from '../../../context/ContaContext';
 
 import { styles } from './styles';
 

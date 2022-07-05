@@ -13,7 +13,7 @@ interface Props {
 export function NextButton({ onPress }: Props) {
     return (
         <TouchableOpacity
-            style={styles.fechar}
+            style={styles.next}
             onPress={onPress}
         >
             <Image style={styles.img} source={next}></Image>

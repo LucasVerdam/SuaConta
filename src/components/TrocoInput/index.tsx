@@ -1,45 +1,53 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput } from 'react-native';
 
-import { global } from '../../context/NomeContext';
+import { global } from '../../context/ContaContext';
 
 import { styles } from './styles';
 
-
 interface Props {
-    onChangeText: any;
+    id: number;
+    nome: string;
+    conta: number;
 }
 
-export function TrocoInput({ onChangeText }: Props) {
+export function TrocoInput({ id, nome, conta }: Props) {
 
-    const { nomes } = global()
+    const { nomes, stateNomes } = global()
+    const [valor, setValor] = useState('')
+
+    function Set(valor: string) {
+        setValor(valor)
+        nomes[id].dinheiro = Number(valor)
+        stateNomes([...nomes])
+    }
 
     return (
-        <View style={{ marginTop: 10 }}>
+        <View style={styles.container}>
 
-            {nomes.map(i => {
-                if (nomes[i.id - 1].pgmtC == false) {
-                    return (
-                        <View
-                            key={i.id}
-                            style={styles.container}
-                        >
-                            <Text style={styles.names}>
-                                <Text style={{ fontWeight: 'bold' }}>
-                                    {i.id}.{i.nome}</Text> vai pagar R${i.conta.toFixed(2)} com:
-                            </Text>
-                            <TextInput
-                                placeholder='R$'
-                                style={styles.input}
-                                keyboardType='decimal-pad'
-                                onChangeText={onChangeText}
-                            />
-                        </View>
-                    );
-                }
-            })}
+            <Text style={styles.txt}>
+                {id + 1}.{nome}
+            </Text>
+
+            <Text style={{ fontSize: 14 }}>
+                Vai pagar
+
+                <Text style={{ fontWeight: "500" }}> R${conta.toFixed(2)} </Text>
+                com:
+
+            </Text>
 
 
+            <View style={{ alignItems: 'flex-end' }}>
+
+                <TextInput
+                    style={styles.input}
+                    maxLength={7}
+                    placeholder='R$'
+                    keyboardType='decimal-pad'
+                    onChangeText={(valor) => Set(valor)}
+                />
+            </View>
         </View>
     );
 }

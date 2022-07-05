@@ -3,21 +3,21 @@ import { StatusBar } from 'expo-status-bar';
 
 import { Router } from './src/routes/Router';
 
-import { NomesProvider } from './src/context/NomeContext';
+import { ContaProvider } from './src/context/ContaContext';
 //import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function App() {
 
   return (
 
-    <NomesProvider>
+    <ContaProvider>
       <Router />
       <StatusBar
-        style="dark"
+        style="light"
         backgroundColor="transparent"
         translucent
       />
-    </NomesProvider>
+    </ContaProvider>
 
   );
 }

@@ -4,14 +4,15 @@ import { themes } from '../../global/styles/themes';
 
 export const styles = StyleSheet.create({
 
-    fechar: {
+    back: {
         width: 100,
         height: themes.heigth.headerHeigth,
+        borderTopLeftRadius: 8,
         borderTopRightRadius: 8,
         borderBottomRightRadius: 8,
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: themes.colors2.laranja
+        backgroundColor: themes.colors2.azulcla
     },
 
     txtBtn: {

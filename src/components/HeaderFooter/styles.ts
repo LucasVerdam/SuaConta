@@ -7,7 +7,7 @@ export const styles = StyleSheet.create({
         height: themes.heigth.headerHeigth,
         borderBottomLeftRadius: 8,
         borderBottomRightRadius: 8,
-        backgroundColor: themes.colors2.azulcla,
+        backgroundColor: themes.colors2.azulesc,
     },
 
     footer: {
@@ -16,6 +16,6 @@ export const styles = StyleSheet.create({
         height: themes.heigth.headerHeigth,
         borderTopLeftRadius: 8,
         borderTopRightRadius: 8,
-        backgroundColor: themes.colors2.azulcla,
+        backgroundColor: themes.colors2.azulesc,
     },
 });

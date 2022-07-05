@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { View, Text, ScrollView, FlatList, TextInput, Pressable } from 'react-native';
 
-import { global } from '../../context/NomeContext';
+import { global } from '../../context/ContaContext';
 
 import { styles } from './styles';
 
 
 export function NamesInput() {
 
-    const { nomes, state } = global()
+    const { nomes, stateNomes } = global()
 
     const [pessoas, setPessoas] = useState('')
 
@@ -25,16 +25,16 @@ export function NamesInput() {
 
     function addToList() {
         let pessoa = { ...pessoaModel }
-        pessoa.id = nomes.length + 1
+        pessoa.id = nomes.length
         pessoa.nome = pessoas
 
         nomes.push(pessoa)
-        state([...nomes])
+        stateNomes([...nomes])
     }
 
     function popOfList() {
         nomes.pop()
-        state([...nomes])
+        stateNomes([...nomes])
     }
 
     return (
@@ -44,7 +44,8 @@ export function NamesInput() {
                 Quem vai pagar?
             </Text>
 
-            <FlatList style={styles.list}
+            <FlatList
+                style={styles.list}
                 data={nomes}
                 showsVerticalScrollIndicator
                 persistentScrollbar
@@ -52,13 +53,15 @@ export function NamesInput() {
 
                     return (
                         <Text style={styles.listItem}>
-                            {item.id}. {item.nome}
+                            {item.id + 1}. {item.nome}
                         </Text>
                     );
                 }} />
 
             <View style={styles.container}>
-                <TextInput style={styles.input}
+                <TextInput
+                    style={styles.input}
+                    maxLength={16}
                     placeholder='Digite os nomes'
                     onChangeText={setPessoas}
                 />
@@ -72,13 +75,14 @@ export function NamesInput() {
                         </Text>
                     </Pressable>
 
-                    {nomes[0] ? <Pressable style={styles.popBtn}
-                        onPress={popOfList}
-                    >
-                        <Text style={{ color: "#fff", fontWeight: '900' }}>
-                            -
-                        </Text>
-                    </Pressable> : null}
+                    {nomes[0] ?
+                        <Pressable style={styles.popBtn}
+                            onPress={popOfList}
+                        >
+                            <Text style={{ color: "#fff", fontWeight: '900' }}>
+                                -
+                            </Text>
+                        </Pressable> : null}
                 </View>
             </View>
         </ScrollView>

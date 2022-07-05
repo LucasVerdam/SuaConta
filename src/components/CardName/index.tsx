@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Text, Pressable } from 'react-native';
 
-import { global } from '../../context/NomeContext';
+import { global } from '../../context/ContaContext';
 
 import { styles } from './styles';
 
@@ -20,12 +20,11 @@ export function CardName({ id, nome }: Props) {
             style={pressed ? styles.pressNames : styles.names}
             onPress={() => {
                 setPressed(!pressed);
-                nomes[id - 1].pgmtC = !nomes[id - 1].pgmtC;
-                console.warn(nomes);
+                nomes[id].pgmtC = !nomes[id].pgmtC;
             }}
         >
 
-            <Text style={styles.listItem}>{id}.{nome}</Text>
+            <Text style={styles.listItem}>{id + 1}.{nome}</Text>
         </Pressable>
     );
 }

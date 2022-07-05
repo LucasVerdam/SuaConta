@@ -6,7 +6,7 @@ import { NextButton } from '../../../components/NextButton';
 import { BackButton } from '../../../components/BackButton';
 import { CardName } from '../../../components/CardName';
 
-import { global } from '../../../context/NomeContext';
+import { global } from '../../../context/ContaContext';
 
 import { styles } from './styles';
 
@@ -15,9 +15,13 @@ export function IgualStep3({ navigation }: any) {
 
     const { nomes } = global()
 
+    function zeraC() {
+        nomes.map(i => nomes[i.id].pgmtC = false)
+    }
+
     return (
         <MainBg
-            backBtn={<BackButton onPress={() => navigation.navigate('IgualStep2')} />}
+            backBtn={<BackButton onPress={() => { zeraC(); navigation.navigate('IgualStep2') }} />}
             nextBtn={<NextButton onPress={() => { navigation.navigate('IgualStep4') }} />}
         >
             <>

@@ -17,13 +17,4 @@ export const styles = StyleSheet.create({
         fontWeight: 'bold',
         marginBottom: 20
     },
-
-    input: {
-        width: 100,
-        height: 50,
-        borderRadius: 40,
-        marginHorizontal: 15,
-        paddingHorizontal: 15,
-        backgroundColor: themes.colors2.cinzaBg,
-    }
 });

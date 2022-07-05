@@ -1,9 +1,9 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Text, FlatList } from 'react-native';
 import { BackButton } from '../../../components/BackButton';
 
 import { MainBg } from '../../../components/MainBg';
-import { NomesContext } from '../../../context/NomeContext';
+import { global } from '../../../context/ContaContext';
 //import IntInput from '../../components/IntInput';
 //import { NamesInput } from '../../../components/NamesInput';
 
@@ -12,7 +12,7 @@ import { styles } from './styles';
 
 export function MistaStep1({ navigation }: any) {
 
-    const { nomes } = useContext(NomesContext)
+    const { nomes } = global()
 
     return (
         <MainBg

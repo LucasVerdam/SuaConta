@@ -1,5 +1,5 @@
 # SuaConta
-Criação de aplicativo para fechar contas em estabelecimentos A&amp;B de forma rápida e organizada.
+Criação de aplicativo para fechar contas em estabelecimentos de Alimentos &amp; Bebidas de forma rápida e organizada.
 
 Tecnologias: React Native / Typescript
 

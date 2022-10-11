@@ -4,6 +4,6 @@ import { themes } from '../../global/styles/themes';
 export const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: themes.colors2.azulcla
+        backgroundColor: themes.colors2.branco
     }
 });

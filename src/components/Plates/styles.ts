@@ -40,7 +40,8 @@ export const styles = StyleSheet.create({
         height: circleWidth / 1.5,
         width: circleWidth / 1.5,
         borderRadius: circleWidth / 2,
-        backgroundColor: themes.colors2.branco
+        opacity: 0.9,
+        backgroundColor: themes.colors2.azulcla
     },
 
     plateT1: {
@@ -71,6 +72,7 @@ export const styles = StyleSheet.create({
         height: circleWidth / 1.5,
         width: circleWidth / 1.5,
         borderRadius: circleWidth / 2,
-        backgroundColor: themes.colors2.branco
+        opacity: 0.9,
+        backgroundColor: themes.colors2.azulcla
     }
 });

@@ -10,7 +10,7 @@ interface Props {
     nome: string;
 }
 
-export function CardName({ id, nome }: Props) {
+export function CardNameP({ id, nome }: Props) {
 
     const [pressed, setPressed] = useState(false)
     const { nomes } = global()
@@ -20,7 +20,7 @@ export function CardName({ id, nome }: Props) {
             style={pressed ? styles.pressNames : styles.names}
             onPress={() => {
                 setPressed(!pressed);
-                nomes[id].pgmtC = !nomes[id].pgmtC
+                nomes[id].pgmtP = !nomes[id].pgmtP;
             }}
         >
 

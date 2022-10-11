@@ -1,5 +1,5 @@
 import React from 'react';
-import { TouchableOpacity, Image } from 'react-native';
+import { View, TouchableOpacity, Image } from 'react-native';
 
 import back from '../../assets/back.png'
 
@@ -12,12 +12,14 @@ interface Props {
 
 export function BackButton({ onPress }: Props) {
     return (
-        <TouchableOpacity
-            style={styles.back}
-            onPress={onPress}
-        >
-            <Image style={styles.img} source={back}></Image>
-        </TouchableOpacity>
+        <View style={{ opacity: 0.88 }}>
+            <TouchableOpacity
+                style={styles.back}
+                onPress={onPress}
+            >
+                <Image style={styles.img} source={back}></Image>
+            </TouchableOpacity>
+        </View>
 
     );
 }

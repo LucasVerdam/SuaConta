@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
-import { View, Text, ScrollView, FlatList, TextInput, Pressable } from 'react-native';
+import { View, Text, ScrollView, FlatList, TextInput } from 'react-native';
 
 import { global } from '../../context/ContaContext';
+import { AddBtn } from '../AddButton';
+import { PopBtn } from '../PopButton';
 
 import { styles } from './styles';
 
@@ -11,7 +13,7 @@ export function NamesInput() {
     const { nomes, stateNomes } = global()
 
     const [pessoas, setPessoas] = useState('')
-
+    const [key, setKey] = useState(0)
 
     const pessoaModel = {
         id: 0,
@@ -19,7 +21,8 @@ export function NamesInput() {
         conta: 0,
         dinheiro: 0,
         troco: 0,
-        pgmtC: false
+        pgmtC: false,
+        pgmtP: false
     }
 
 
@@ -30,6 +33,8 @@ export function NamesInput() {
 
         nomes.push(pessoa)
         stateNomes([...nomes])
+
+        setKey(key + 1)
     }
 
     function popOfList() {
@@ -58,7 +63,7 @@ export function NamesInput() {
                     );
                 }} />
 
-            <View style={styles.container}>
+            <View key={key} style={styles.container}>
                 <TextInput
                     style={styles.input}
                     maxLength={16}
@@ -67,22 +72,11 @@ export function NamesInput() {
                 />
 
                 <View style={styles.btnContainer}>
-                    <Pressable style={styles.addBtn}
-                        onPress={addToList}
-                    >
-                        <Text style={{ color: "#fff", fontWeight: '500' }}>
-                            +
-                        </Text>
-                    </Pressable>
+
+                    <AddBtn func={addToList} />
 
                     {nomes[0] ?
-                        <Pressable style={styles.popBtn}
-                            onPress={popOfList}
-                        >
-                            <Text style={{ color: "#fff", fontWeight: '900' }}>
-                                -
-                            </Text>
-                        </Pressable> : null}
+                        <PopBtn func={popOfList} /> : null}
                 </View>
             </View>
         </ScrollView>

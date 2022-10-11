@@ -47,7 +47,7 @@ export function IgualStep4({ navigation }: any) {
     return (
 
         <MainBg
-            backBtn={<BackButton onPress={() => { zeraV(); navigation.navigate('IgualStep3') }} />}
+            backBtn={<BackButton onPress={() => { zeraV(); navigation.navigate('IgualStep3'); }} />}
             nextBtn={<NextButton onPress={() => { conta(); navigation.navigate('IgualStep5'); }} />}
         >
 
@@ -55,7 +55,7 @@ export function IgualStep4({ navigation }: any) {
                 <Text style={styles.title}>Igualmente</Text>
 
                 <Text style={styles.txt}>Valor que será pago em dinheiro:</Text>
-                <Text style={styles.subTxt}>Opcional<Text style={{ fontSize: 12 }}>(Para cálculo do troco)</Text></Text>
+                {/* <Text style={styles.subTxt}>Opcional<Text style={{ fontSize: 12 }}>(Para cálculo do troco)</Text></Text> */}
 
                 <View style={{ marginVertical: 10 }}>
                     {nomes.map(i => {

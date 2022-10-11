@@ -22,8 +22,8 @@ export function MoneyInput({ text, subText, placeholder, maxLenght = 7, onChange
 
             <View style={{ alignItems: 'flex-end' }}>
                 <TextInput
-                    placeholder={placeholder}
                     style={styles.input}
+                    placeholder={placeholder}
                     keyboardType='decimal-pad'
                     maxLength={maxLenght}
                     onChangeText={onChangeText}

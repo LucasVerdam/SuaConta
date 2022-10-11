@@ -15,15 +15,37 @@ export const styles = StyleSheet.create({
     txt: {
         fontSize: 17,
         fontWeight: 'bold',
-        marginBottom: 20
     },
 
-    input: {
+    inputNome: {
+        width: 150,
+        height: 40,
+        borderRadius: 4,
+        marginHorizontal: 15,
+        paddingHorizontal: 15,
+        backgroundColor: themes.colors2.cinzaBg,
+    },
+
+    inputValor: {
         width: 100,
         height: 45,
         borderRadius: 40,
         marginHorizontal: 15,
         paddingHorizontal: 15,
         backgroundColor: themes.colors2.cinzaBg,
-    }
+    },
+
+    cardNames: {
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        justifyContent: 'space-around'
+    },
+
+    btnContainer: {
+        flex: 1,
+        flexDirection: 'row-reverse',
+        marginTop: 10,
+        marginBottom: 20,
+        justifyContent: 'center'
+    },
 });

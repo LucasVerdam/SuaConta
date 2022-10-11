@@ -19,6 +19,7 @@ export function IgualStep3({ navigation }: any) {
         nomes.map(i => nomes[i.id].pgmtC = false)
     }
 
+
     return (
         <MainBg
             backBtn={<BackButton onPress={() => { zeraC(); navigation.navigate('IgualStep2') }} />}

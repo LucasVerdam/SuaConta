@@ -3,10 +3,9 @@ import { themes } from '../../global/styles/themes';
 
 export const styles = StyleSheet.create({
     names: {
+        height: 30,
         minWidth: 70,
         paddingHorizontal: 10,
-        paddingVertical: 15,
-        marginTop: 25,
         marginHorizontal: 15,
         borderRadius: 10,
         borderWidth: 1,
@@ -17,10 +16,9 @@ export const styles = StyleSheet.create({
     },
 
     pressNames: {
+        height: 30,
         minWidth: 70,
         paddingHorizontal: 10,
-        paddingVertical: 15,
-        marginTop: 25,
         marginHorizontal: 15,
         borderRadius: 10,
         borderWidth: 1,
@@ -31,7 +29,7 @@ export const styles = StyleSheet.create({
     },
 
     listItem: {
-        fontSize: 18,
+        fontSize: 14,
         color: themes.colors2.cinzaTxt
     },
 });

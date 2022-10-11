@@ -12,6 +12,9 @@ import { IgualStep4 } from "../screens/Igualmente/IgualStep4";
 import { IgualStep5 } from "../screens/Igualmente/IgualStep5";
 
 import { MistaStep1 } from "../screens/Mista/MistaStep1";
+import { MistaStep2 } from "../screens/Mista/MistaStep2";
+import { MistaStep3 } from "../screens/Mista/MistaStep3";
+
 import { Plate } from "../screens/Plate";
 
 
@@ -31,6 +34,8 @@ export function StackNav() {
             <Stack.Screen name="IgualStep5" component={IgualStep5} />
             <Stack.Screen name="Plate" component={Plate} />
             <Stack.Screen name="MistaStep1" component={MistaStep1} />
+            <Stack.Screen name="MistaStep2" component={MistaStep2} />
+            <Stack.Screen name="MistaStep3" component={MistaStep3} />
         </Stack.Navigator>
     );
 }

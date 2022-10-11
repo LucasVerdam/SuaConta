@@ -11,5 +11,13 @@ export const styles = StyleSheet.create({
         color: themes.colors2.preto,
     },
 
-});
+    txt: {
+        fontSize: 20,
+        marginTop: 30,
+        paddingHorizontal: 15,
+        fontWeight: '300',
+        textAlign: 'left',
+        color: themes.colors2.cinzaTxt
+    },
 
+});

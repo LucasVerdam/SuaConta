@@ -4,7 +4,7 @@ import { themes } from '../../global/styles/themes';
 export const styles = StyleSheet.create({
     txt: {
         fontSize: 20,
-        marginTop: 50,
+        marginTop: 30,
         paddingHorizontal: 15,
         fontWeight: '300',
         textAlign: 'left',
@@ -39,26 +39,6 @@ export const styles = StyleSheet.create({
         paddingHorizontal: 15,
         marginHorizontal: 15,
         backgroundColor: themes.colors2.cinzaBg
-    },
-
-    addBtn: {
-        height: 45,
-        width: 45,
-        borderRadius: 18,
-        marginHorizontal: 15,
-        alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor: themes.colors2.azulesc
-    },
-
-    popBtn: {
-        height: 45,
-        width: 45,
-        borderRadius: 18,
-        marginHorizontal: 15,
-        alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor: themes.colors2.azulesc
     },
 
     btnContainer: {

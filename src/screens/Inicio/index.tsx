@@ -19,15 +19,14 @@ export function Inicio({ navigation }: any) {
 
         <MainBg>
             <>
-                <View style={styles.container}>
-
-                    <Text style={styles.msg}>
-                        Como gostaria de fechar{'\n'}a conta hoje?
-                    </Text>
-
-                </View>
 
                 <View style={styles.body}>
+
+                    <View style={styles.container}>
+                        <Text style={styles.msg}>
+                            Como gostaria de fechar{'\n'}a conta hoje?
+                        </Text>
+                    </View>
 
                     <DivButton
                         nome={'Individual'}

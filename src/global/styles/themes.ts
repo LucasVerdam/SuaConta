@@ -2,24 +2,16 @@ import { Dimensions } from "react-native"
 
 
 export const themes = {
-    colors1: {
-        branco: '#FFF',
-        roxo: '#581342',
-        laranja: '#FF4313',
-        marron: '#853A3F',
-        pele: '#FFDEB0'
-    },
-
     colors2: {
-        preto: '#252A36',
+        preto: '#3f3f3f',
         branco: '#FFF',
-        azulesc: '#3E4CA0',
-        azulcla: '#828ECE',
+        azulesc: '#ED5E37',
+        azulcla: '#D9D5FF',
         laranja: '#f79983',
-        pele: '#FFEAC8',
+        pele: '#BFFB60',
         pelecla: '#fcfae3',
         cinzaTxt: '#252A36',
-        cinzaBg: '#D3D3D3'
+        cinzaBg: '#D9D5FF'
     },
 
     heigth: {

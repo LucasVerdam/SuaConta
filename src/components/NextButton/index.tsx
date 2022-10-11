@@ -1,5 +1,5 @@
 import React from 'react';
-import { TouchableOpacity, Image } from 'react-native';
+import { View, TouchableOpacity, Image } from 'react-native';
 
 import next from '../../assets/next.png'
 
@@ -12,11 +12,13 @@ interface Props {
 
 export function NextButton({ onPress }: Props) {
     return (
-        <TouchableOpacity
-            style={styles.next}
-            onPress={onPress}
-        >
-            <Image style={styles.img} source={next}></Image>
-        </TouchableOpacity>
+        <View style={{ opacity: 0.88 }}>
+            <TouchableOpacity
+                style={styles.next}
+                onPress={onPress}
+            >
+                <Image style={styles.img} source={next}></Image>
+            </TouchableOpacity>
+        </View>
     );
 }

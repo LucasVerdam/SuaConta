@@ -13,6 +13,7 @@ export interface Conta {
         dinheiro: number;
         troco: number;
         pgmtC: boolean;
+        pgmtP: boolean;
     }[]
     stateNomes: (n: any) => any;
 
@@ -22,7 +23,7 @@ export interface Conta {
         valor: number;
         qtd: number;
         valorT: number;
-        pessoas: string[] | number;
+        pessoas: string[];
     }[]
     stateProdutos: (n: any) => any;
 

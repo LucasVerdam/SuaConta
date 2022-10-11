@@ -12,7 +12,7 @@ export const styles = StyleSheet.create({
         borderBottomRightRadius: 8,
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: themes.colors2.azulcla
+        backgroundColor: themes.colors2.pele
     },
 
     txtBtn: {

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Text, View, ScrollView } from 'react-native';
 
-// import IntInput from '../../components/IntInput';
 import { MainBg } from '../../../components/MainBg';
 import { NextButton } from '../../../components/NextButton';
 import { BackButton } from '../../../components/BackButton';

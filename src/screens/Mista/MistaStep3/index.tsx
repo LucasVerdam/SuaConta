@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Text } from 'react-native';
 
-// import IntInput from '../../components/IntInput';
 import { MainBg } from '../../../components/MainBg';
 import { NextButton } from '../../../components/NextButton';
 import { BackButton } from '../../../components/BackButton';
@@ -9,33 +8,48 @@ import { BackButton } from '../../../components/BackButton';
 
 import { global } from '../../../context/ContaContext';
 import { styles } from './styles';
+import { MoneyInput } from '../../../components/MoneyInput';
+
 
 export function MistaStep3({ navigation }: any) {
 
-    const { nomes, produtos } = global()
+    const { nomes, produtos, valores } = global()
+    const [gorj, setGorj] = useState(0)
 
-    function end() {
-        while (nomes.length > 0) {
-            nomes.pop();
-        }
 
-        while (produtos.length > 0) {
-            produtos.pop();
-        }
+    function addGorj() {
+
+        const valG = gorj / 100
+
+        valores.total += valores.total * valG
+
+        produtos.map((i) => {
+            i.valorT += i.valorT * valG
+        })
+
+        nomes.map((i) => {
+            i.conta += i.conta * valG
+        })
     }
 
     return (
-
         <MainBg
-            backBtn={<BackButton onPress={() => { navigation.navigate('MistaStep2') }} />}
-            nextBtn={<NextButton onPress={() => { navigation.navigate('Inicio'); end(); }} />}
+            backBtn={<BackButton onPress={() => navigation.navigate('MistaStep2')} />}
+            nextBtn={<NextButton onPress={() => { addGorj(); navigation.navigate('MistaStep4') }} />}
         >
+
             <>
-                <Text style={styles.title}>Mista3</Text>
+                <Text style={styles.title}>Mista</Text>
 
-
+                <MoneyInput
+                    text='Vai ter gorjeta?'
+                    subText='Opcional'
+                    placeholder='%'
+                    maxLenght={2}
+                    onChangeText={setGorj}
+                />
             </>
-        </MainBg >
 
+        </MainBg>
     );
 }

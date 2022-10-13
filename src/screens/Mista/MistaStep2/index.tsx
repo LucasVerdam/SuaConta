@@ -13,7 +13,7 @@ import { styles } from './styles';
 
 export function MistaStep2({ navigation }: any) {
 
-    const { nomes, produtos, valores, stateValores } = global()
+    const { nomes, produtos, valores } = global()
 
 
     function zeraC() {

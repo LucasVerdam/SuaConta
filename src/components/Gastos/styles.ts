@@ -2,8 +2,9 @@ import { StyleSheet } from 'react-native';
 import { themes } from '../../global/styles/themes';
 
 export const styles = StyleSheet.create({
-    integrantes: {
+    gastos: {
         flex: 1,
+        /* maxHeight: 280, */
         margin: 10,
         paddingBottom: 10,
         borderRadius: 8,
@@ -15,7 +16,7 @@ export const styles = StyleSheet.create({
         fontSize: 18,
         marginTop: 5,
         marginLeft: 10,
-        color: '#fff'
+        color: 'white'
     },
 
     conta: {

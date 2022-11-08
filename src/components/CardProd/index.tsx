@@ -18,7 +18,7 @@ interface PModel {
 export function CardProd() {
 
     const { produtos, stateProdutos } = global();
-    const [prods, setProds] = useState([{} as PModel])
+    const [prods, setProds] = useState([...produtos])
 
     function popP(P: PModel) {
         produtos.map((i) => {
@@ -42,11 +42,11 @@ export function CardProd() {
             {produtos.length > 0 ?
                 prods.map((i) => {
                     return (
-                        <View key={i.id} style={styles.container}>
+                        <View key={i.nome} style={styles.container}>
 
                             <TouchableOpacity
                                 onPress={() => {
-                                    popP(i); stateProdutos([...produtos]); console.warn(produtos);
+                                    popP(i); stateProdutos([...produtos]);
                                 }}
                                 style={{
                                     height: 30,

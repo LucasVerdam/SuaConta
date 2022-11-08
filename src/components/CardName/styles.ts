@@ -16,7 +16,7 @@ export const styles = StyleSheet.create({
         alignItems: 'center'
     },
 
-    pressNames: {
+    pressedN: {
         minWidth: 70,
         paddingHorizontal: 10,
         paddingVertical: 15,

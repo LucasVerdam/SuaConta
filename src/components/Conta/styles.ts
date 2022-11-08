@@ -1,0 +1,13 @@
+import { StyleSheet } from 'react-native';
+import { themes } from '../../global/styles/themes';
+
+export const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        margin: 10,
+        borderRadius: 8,
+        borderWidth: 0.5,
+        justifyContent: 'space-between',
+        backgroundColor: themes.colors2.pelecla
+    },
+});

@@ -4,6 +4,7 @@ import { styles } from './styles';
 
 
 interface Props {
+    k?: number;
     text?: string;
     subText?: string;
     placeholder: string;
@@ -11,7 +12,7 @@ interface Props {
     onChangeText: any;
 }
 
-export function MoneyInput({ text, subText, placeholder, maxLenght = 7, onChangeText }: Props) {
+export function MoneyInput({ k, text, subText, placeholder, maxLenght = 7, onChangeText }: Props) {
     return (
         <View style={{ marginBottom: 30 }}>
             <Text style={styles.txt1}>{text}</Text>
@@ -22,6 +23,7 @@ export function MoneyInput({ text, subText, placeholder, maxLenght = 7, onChange
 
             <View style={{ alignItems: 'flex-end' }}>
                 <TextInput
+                    key={k}
                     style={styles.input}
                     placeholder={placeholder}
                     keyboardType='decimal-pad'

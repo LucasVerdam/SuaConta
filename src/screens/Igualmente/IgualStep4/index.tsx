@@ -1,21 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ScrollView, Text, View } from 'react-native';
 
-// import IntInput from '../../components/IntInput';
 import { MainBg } from '../../../components/MainBg';
 import { NextButton } from '../../../components/NextButton';
 import { BackButton } from '../../../components/BackButton';
-
-import { global } from '../../../context/ContaContext';
-
-import { styles } from './styles';
 import { TrocoInput } from '../../../components/TrocoInput';
 import { PgmtC } from '../../../components/PgmtC';
+
+import { global } from '../../../context/ContaContext';
+import { styles } from './styles';
 
 
 export function IgualStep4({ navigation }: any) {
 
-    const { nomes, valores, produtos } = global()
+    const { nomes, valores } = global()
+
+    const [key, setKey] = useState(0)
 
     function zeraV() {
         nomes.map(i => {
@@ -29,6 +29,7 @@ export function IgualStep4({ navigation }: any) {
         nomes.map(i => {
             if (nomes[i.id].pgmtC == false && nomes[i.id].dinheiro != 0) {
                 nomes[i.id].troco = nomes[i.id].dinheiro - nomes[i.id].conta
+                valores.trocoT += nomes[i.id].troco
             }
         })
 
@@ -41,7 +42,7 @@ export function IgualStep4({ navigation }: any) {
             }
         })
 
-        valores.trocoT = valores.valCard + valores.valDin - valores.total
+        setKey(key + 1)
     }
 
     return (
@@ -55,7 +56,6 @@ export function IgualStep4({ navigation }: any) {
                 <Text style={styles.title}>Igualmente</Text>
 
                 <Text style={styles.txt}>Valor que será pago em dinheiro:</Text>
-                {/* <Text style={styles.subTxt}>Opcional<Text style={{ fontSize: 12 }}>(Para cálculo do troco)</Text></Text> */}
 
                 <View style={{ marginVertical: 10 }}>
                     {nomes.map(i => {
@@ -64,6 +64,7 @@ export function IgualStep4({ navigation }: any) {
                             return (
                                 <TrocoInput
                                     key={i.id}
+                                    k={key}
                                     id={nomes[i.id].id}
                                     nome={nomes[i.id].nome}
                                     conta={nomes[i.id].conta}

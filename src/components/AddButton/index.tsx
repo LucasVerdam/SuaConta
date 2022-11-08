@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Pressable } from 'react-native';
+import { Text, Pressable, TouchableOpacity } from 'react-native';
 import { styles } from './styles';
 
 interface Props {
@@ -8,7 +8,8 @@ interface Props {
 
 export function AddBtn({ func }: Props) {
     return (
-        <Pressable style={styles.addBtn}
+        <TouchableOpacity
+            style={styles.addBtn}
             onPress={func}
         >
 
@@ -16,6 +17,6 @@ export function AddBtn({ func }: Props) {
                 +
             </Text>
 
-        </Pressable>
+        </TouchableOpacity>
     );
 }

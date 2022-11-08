@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, ScrollView } from 'react-native';
+import { Text, View, Alert, ScrollView } from 'react-native';
 
 import { MainBg } from '../../../components/MainBg';
 import { NextButton } from '../../../components/NextButton';
@@ -17,26 +17,56 @@ export function MistaStep2({ navigation }: any) {
 
 
     function zeraC() {
-        nomes.map(i => nomes[i.id].pgmtP = false)
 
-        while (produtos[0]) {
-            produtos.pop();
+        if (produtos.length > 0) {
+            Alert.alert('Manter produtos?', 'SIM irá manter os produtos / NÃO irá remove-los.', [
+                {
+                    text: 'Sim',
+                    onPress() {
+                        nomes.map((i) => nomes[i.id].pgmtP = false);
+                        navigation.navigate('MistaStep1')
+                    }
+                },
+                {
+                    text: 'Não',
+                    onPress() {
+                        nomes.map((i) => nomes[i.id].pgmtP = false)
+
+                        while (produtos[0]) {
+                            produtos.pop();
+                        }
+                        navigation.navigate('MistaStep1');
+                    }
+                }
+            ])
+        } else {
+            navigation.navigate('MistaStep1')
         }
+
+
     }
 
     function somaV() {
-        produtos.map((i) => {
-            valores.total += i.valorT
 
-        });
+        if (produtos.length == 0) {
+            Alert.alert('Nenhum produto!', 'Deve-se adicionar ao menos 1 produto.', [
+                {
+                    text: 'OK',
+                    onPress() { }
+                },
+            ])
+        } else {
+            nomes.map((i) => {
+                produtos.map((p) => {
+                    if (p.pessoas.includes(i.nome)) {
+                        nomes[i.id].conta += p.valorT / p.pessoas.length
+                    }
+                })
+            });
 
-        nomes.map((i) => {
-            produtos.map((p) => {
-                if (p.pessoas.includes(i.nome)) {
-                    nomes[i.id].conta += p.valorT / p.pessoas.length
-                }
-            })
-        })
+            navigation.navigate('MistaStep3');
+        }
+
 
         console.log(nomes);
         console.log(' ');
@@ -50,8 +80,8 @@ export function MistaStep2({ navigation }: any) {
     return (
 
         <MainBg
-            backBtn={<BackButton onPress={() => { zeraC(); navigation.navigate('MistaStep1') }} />}
-            nextBtn={<NextButton onPress={() => { somaV(); navigation.navigate('MistaStep3') }} />}
+            backBtn={<BackButton onPress={() => { zeraC(); }} />}
+            nextBtn={<NextButton onPress={() => { somaV(); }} />}
         >
             <ScrollView>
                 <Text style={styles.title}>Mista</Text>
@@ -59,12 +89,9 @@ export function MistaStep2({ navigation }: any) {
                 <Text style={styles.txt}>Informe os gastos:</Text>
 
                 <View style={{ marginVertical: 10 }}>
-
-
                     <CardProd />
 
                     <ProdInput />
-
                 </View>
 
             </ScrollView>

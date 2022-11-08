@@ -4,7 +4,7 @@ import { themes } from '../../global/styles/themes';
 export const styles = StyleSheet.create({
     gastos: {
         flex: 1,
-        /* maxHeight: 280, */
+        maxHeight: 250,
         margin: 10,
         paddingBottom: 10,
         borderRadius: 8,
@@ -57,5 +57,17 @@ export const styles = StyleSheet.create({
         fontSize: 11,
         marginTop: 2,
         fontWeight: 'bold'
+    },
+
+    imgCont: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginLeft: -60,
+        paddingTop: 4
+    },
+
+    img: {
+        width: 12,
+        height: 12,
     }
 });

@@ -28,7 +28,7 @@ export const styles = StyleSheet.create({
 
     container: {
         flex: 1,
-        marginTop: 10,
+        marginVertical: 10,
         alignItems: 'center'
     },
 

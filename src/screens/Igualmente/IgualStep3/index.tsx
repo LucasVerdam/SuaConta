@@ -7,7 +7,6 @@ import { BackButton } from '../../../components/BackButton';
 import { CardName } from '../../../components/CardName';
 
 import { global } from '../../../context/ContaContext';
-
 import { styles } from './styles';
 
 
@@ -15,10 +14,10 @@ export function IgualStep3({ navigation }: any) {
 
     const { nomes } = global()
 
-    function zeraC() {
-        nomes.map(i => nomes[i.id].pgmtC = false)
-    }
 
+    function zeraC() {
+        nomes.map((i) => nomes[i.id].pgmtC = false)
+    }
 
     return (
         <MainBg
@@ -49,10 +48,3 @@ export function IgualStep3({ navigation }: any) {
 }
 
 
-{/* <FlatList
-                    data={nomes}
-                    keyExtractor={i => i.id.toString()}
-                    renderItem={({ item }) => {
-                        return <Text> {item.id}- {item.nome}: {item.conta.toFixed(2)}</Text>
-                    }}>
-                </FlatList> */}

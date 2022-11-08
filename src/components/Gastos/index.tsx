@@ -1,7 +1,9 @@
 import React from 'react';
-import { View, Text, ScrollView } from 'react-native';
-import { global } from '../../context/ContaContext';
+import { View, Text, Image, ScrollView } from 'react-native';
 
+import user from '../../assets/user.png'
+
+import { global } from '../../context/ContaContext';
 import { styles } from './styles';
 
 export function Gastos() {
@@ -27,6 +29,14 @@ export function Gastos() {
 
                             <View style={styles.valores}>
 
+                                <View style={styles.valor}>
+                                    <Text style={styles.msg}>Dividido por:</Text>
+                                    <Text style={styles.val}>{item.pessoas.length}</Text>
+
+                                    <View style={styles.imgCont}>
+                                        <Image style={styles.img} source={user}></Image>
+                                    </View>
+                                </View>
 
                                 <View style={styles.valor}>
                                     <Text style={styles.msg}>Valor unitário:</Text>
@@ -43,26 +53,6 @@ export function Gastos() {
                                     <Text style={styles.val}>R${item.valorT.toFixed(2)}</Text>
                                 </View>
 
-                                <View style={styles.valor}>
-                                    <Text style={styles.msg}>Dividido por:</Text>
-                                    <Text style={styles.val}>{item.pessoas.length}</Text>
-                                </View>
-
-                                {/* {item.pgmtC ?
-                                    <Text style={styles.msg}>Pago no cartão.</Text>
-                                    :
-                                    <>
-                                        <View style={styles.valor}>
-                                            <Text style={styles.msg}>Pago com:   </Text>
-                                            <Text style={styles.val}>R${item.dinheiro.toFixed(2)}</Text>
-                                        </View>
-
-                                        <View style={styles.valor}>
-                                            <Text style={styles.msg}>Troco:</Text>
-                                            <Text style={styles.val}>R${item.troco.toFixed(2)}</Text>
-                                        </View>
-                                    </>
-                                } */}
 
                             </View>
 

@@ -4,6 +4,7 @@ import { themes } from '../../global/styles/themes';
 export const styles = StyleSheet.create({
     integrantes: {
         flex: 1,
+        maxHeight: 250,
         margin: 10,
         paddingBottom: 10,
         borderRadius: 8,

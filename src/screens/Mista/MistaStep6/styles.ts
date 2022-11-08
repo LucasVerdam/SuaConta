@@ -10,12 +10,4 @@ export const styles = StyleSheet.create({
         color: themes.colors2.preto,
     },
 
-    container: {
-        flex: 1,
-        margin: 10,
-        borderRadius: 8,
-        borderWidth: 0.5,
-        justifyContent: 'space-between',
-        backgroundColor: themes.colors2.pelecla
-    },
 });

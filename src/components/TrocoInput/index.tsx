@@ -6,12 +6,13 @@ import { global } from '../../context/ContaContext';
 import { styles } from './styles';
 
 interface Props {
+    k: number;
     id: number;
     nome: string;
     conta: number;
 }
 
-export function TrocoInput({ id, nome, conta }: Props) {
+export function TrocoInput({ k, id, nome, conta }: Props) {
 
     const { nomes, stateNomes } = global()
     const [valor, setValor] = useState('')
@@ -41,6 +42,7 @@ export function TrocoInput({ id, nome, conta }: Props) {
             <View style={{ alignItems: 'flex-end' }}>
 
                 <TextInput
+                    key={k}
                     style={styles.input}
                     maxLength={7}
                     placeholder='R$'

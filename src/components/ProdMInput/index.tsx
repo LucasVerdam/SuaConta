@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { View, TextInput, Text, ScrollView } from 'react-native';
+import React, { useState } from 'react';
+import { View, TextInput, Text, ScrollView, Alert } from 'react-native';
 
 import { global } from '../../context/ContaContext';
 import { AddBtn } from '../AddButton';
@@ -19,7 +19,7 @@ interface PModel {
 
 export function ProdInput() {
 
-    const { nomes, produtos, stateProdutos, valores } = global();
+    const { nomes, produtos, stateProdutos } = global();
 
     const [key, setKey] = useState(0)
     const [nomeP, setNomeP] = useState('')
@@ -39,24 +39,55 @@ export function ProdInput() {
 
     function addProd() {
 
-        let produto = { ...produtoModel }
+        let arrayP: string[] = []
+        let arrayN: string[] = []
 
-        produto.id = key
-        produto.nome = nomeP
-        produto.qtd = qtd
-        produto.valor = valorP
-        produto.valorT = valorP * qtd
-        nomes.map((i) => { i.pgmtP ? produto.pessoas.push(i.nome) : null; })
+        produtos.map((i) => {
+            arrayP.push(i.nome)
+        })
 
-        produtos.push(produto)
-        stateProdutos([...produtos])
+        nomes.map((i) => {
+            i.pgmtP ? arrayN.push(i.nome) : null
+        })
 
-        setQtd(1)
-        setKey(key + 1)
-        nomes.map(i => nomes[i.id].pgmtP = false)
+        if (arrayP.includes(nomeP)) {
+            Alert.alert('Este produto já está listado!', 'Nomeie outro.', [
+                {
+                    text: 'OK',
+                    onPress() {
+                        null
+                    }
+                }
+            ])
+        } else if (nomeP == '' || valorP == 0 || arrayN.length < 1) {
+            Alert.alert('Preencha todos os campos!', 'Nome / Valor / Pago por', [
+                {
+                    text: 'OK',
+                    onPress() {
+                        null
+                    }
+                }
+            ])
+        } else {
 
-        console.warn(produtos);
+            let produto = { ...produtoModel }
 
+            produto.id = produtos.length
+            produto.nome = nomeP
+            produto.qtd = qtd
+            produto.valor = valorP
+            produto.valorT = valorP * qtd
+            nomes.map((i) => { i.pgmtP ? produto.pessoas.push(i.nome) : null; })
+
+            produtos.push(produto)
+            stateProdutos([...produtos])
+
+            setQtd(1)
+            setKey(key + 1)
+            setNomeP('')
+            setValorP(0)
+            nomes.map(i => nomes[i.id].pgmtP = false)
+        }
     }
 
 
@@ -111,7 +142,6 @@ export function ProdInput() {
                         </View>
                         <AddBtn func={() => { setQtd(qtd + 1); }} />
                     </View>
-
 
                 </View>
 

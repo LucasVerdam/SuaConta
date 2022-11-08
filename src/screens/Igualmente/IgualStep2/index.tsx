@@ -7,7 +7,6 @@ import { BackButton } from '../../../components/BackButton';
 import { MoneyInput } from '../../../components/MoneyInput';
 
 import { global } from '../../../context/ContaContext';
-
 import { styles } from './styles';
 
 
@@ -25,7 +24,7 @@ export function IgualStep2({ navigation }: any) {
 
         valores.total = total
 
-        nomes.map(i => i.conta = total / nomes.length)
+        nomes.map((i) => i.conta = total / nomes.length)
     }
 
     return (

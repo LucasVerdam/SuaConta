@@ -9,21 +9,35 @@ import { NextButton } from '../../../components/NextButton';
 import { global } from '../../../context/ContaContext';
 import { styles } from './styles';
 
+
 export function MistaStep4({ navigation }: any) {
 
-    const { nomes } = global();
+    const { nomes, produtos, valores } = global();
 
+    function zeraC() {
+        nomes.map((i) => {
+            nomes[i.id].conta = 0
+            nomes[i.id].pgmtC = false
+        })
+
+        nomes.map((i) => {
+            produtos.map((p) => {
+                if (p.pessoas.includes(i.nome)) {
+                    nomes[i.id].conta += p.valorT / p.pessoas.length
+                }
+            })
+        })
+
+        valores.total = 0
+    }
 
     return (
         <MainBg
-            backBtn={<BackButton onPress={() => navigation.navigate('MistaStep3')} />}
-            nextBtn={<NextButton onPress={() => {
-                console.warn(nomes);
-                navigation.navigate('MistaStep5')
-            }} />}
+            backBtn={<BackButton onPress={() => { zeraC(); navigation.navigate('MistaStep3') }} />}
+            nextBtn={<NextButton onPress={() => { navigation.navigate('MistaStep5') }} />}
         >
             <>
-                <Text style={styles.title}>Igualmente</Text>
+                <Text style={styles.title}>Mista</Text>
 
                 <Text style={styles.txt}>Alguém vai pagar no cartão?</Text>
                 <Text style={styles.subTxt}>Selecione os nomes:</Text>

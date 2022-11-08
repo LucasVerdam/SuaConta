@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, ScrollView, FlatList, TextInput } from 'react-native';
+import { View, Text, ScrollView, FlatList, TextInput, Alert } from 'react-native';
 
 import { global } from '../../context/ContaContext';
 import { AddBtn } from '../AddButton';
@@ -27,14 +27,44 @@ export function NamesInput() {
 
 
     function addToList() {
-        let pessoa = { ...pessoaModel }
-        pessoa.id = nomes.length
-        pessoa.nome = pessoas
 
-        nomes.push(pessoa)
-        stateNomes([...nomes])
+        let arrayN: string[] = []
 
-        setKey(key + 1)
+        nomes.map((i) => {
+            arrayN.push(i.nome)
+        })
+
+        if (arrayN.includes(pessoas)) {
+            Alert.alert('Este nome já está listado!', 'Utilize outro.', [
+                {
+                    text: 'OK',
+                    onPress() {
+                        setKey(key + 1);
+                        setPessoas('');
+                    }
+                }
+            ])
+        } else if (pessoas == '') {
+            Alert.alert('Nenhum nome foi digitado!', 'Digite ao menos uma letra.', [
+                {
+                    text: 'OK',
+                    onPress() {
+                        setKey(key + 1);
+                        setPessoas('');
+                    }
+                }
+            ])
+        } else {
+            let pessoa = { ...pessoaModel }
+            pessoa.id = nomes.length
+            pessoa.nome = pessoas
+
+            nomes.push(pessoa)
+            stateNomes([...nomes])
+
+            setKey(key + 1)
+            setPessoas('')
+        }
     }
 
     function popOfList() {
@@ -44,12 +74,23 @@ export function NamesInput() {
 
     return (
 
-        <ScrollView>
+        <View>
             <Text style={styles.txt}>
                 Quem vai pagar?
             </Text>
 
-            <FlatList
+
+            {nomes.map((i) => {
+                return (
+                    <View style={styles.list}>
+                        <Text style={styles.listItem}>
+                            {i.id + 1}. {i.nome}
+                        </Text>
+                    </View>
+                );
+            })}
+
+            {/* <FlatList
                 style={styles.list}
                 data={nomes}
                 showsVerticalScrollIndicator
@@ -61,7 +102,7 @@ export function NamesInput() {
                             {item.id + 1}. {item.nome}
                         </Text>
                     );
-                }} />
+                }} /> */}
 
             <View key={key} style={styles.container}>
                 <TextInput
@@ -79,7 +120,7 @@ export function NamesInput() {
                         <PopBtn func={popOfList} /> : null}
                 </View>
             </View>
-        </ScrollView>
+        </View>
 
     );
 }

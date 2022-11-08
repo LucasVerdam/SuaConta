@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Pressable } from 'react-native';
+import { Text, TouchableOpacity } from 'react-native';
 import { styles } from './styles';
 
 interface Props {
@@ -8,12 +8,12 @@ interface Props {
 
 export function PopBtn({ func }: Props) {
     return (
-        <Pressable style={styles.popBtn}
+        <TouchableOpacity style={styles.popBtn}
             onPress={func}
         >
             <Text style={styles.txt}>
                 -
             </Text>
-        </Pressable>
+        </TouchableOpacity>
     );
 }

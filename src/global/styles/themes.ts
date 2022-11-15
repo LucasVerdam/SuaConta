@@ -15,6 +15,6 @@ export const themes = {
     },
 
     heigth: {
-        headerHeigth: Dimensions.get('window').height * 0.08
+        headerHeigth: Dimensions.get('window').height * 0.07
     }
 }

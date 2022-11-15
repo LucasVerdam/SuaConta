@@ -4,9 +4,9 @@ import { themes } from '../../global/styles/themes';
 export const styles = StyleSheet.create({
 
     popBtn: {
-        height: 40,
-        width: 40,
-        borderRadius: 20,
+        height: 36,
+        width: 36,
+        borderRadius: 18,
         marginHorizontal: 15,
         alignItems: 'center',
         justifyContent: 'center',
@@ -16,7 +16,6 @@ export const styles = StyleSheet.create({
 
     txt: {
         position: 'absolute',
-        top: 2,
         fontSize: 25,
         fontWeight: '900',
         color: "#fff",

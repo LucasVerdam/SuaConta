@@ -18,7 +18,7 @@ export function PgmtC({ id, nome, conta }: Props) {
                 {id + 1}.{nome}
             </Text>
 
-            <Text style={{ fontSize: 14, textAlign: 'center' }}>
+            <Text style={{ fontSize: 15, textAlign: 'center' }}>
                 Vai pagar
 
                 <Text style={{ fontWeight: "500" }}> R${conta.toFixed(2)} </Text>

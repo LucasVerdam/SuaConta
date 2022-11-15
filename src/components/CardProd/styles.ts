@@ -13,6 +13,18 @@ export const styles = StyleSheet.create({
         backgroundColor: themes.colors2.pelecla,
     },
 
+    popBtn: {
+        height: 30,
+        width: 30,
+        borderRadius: 15,
+        justifyContent: 'center',
+        alignItems: 'center',
+        position: 'absolute',
+        right: -10,
+        top: -10,
+        backgroundColor: '#f45',
+    },
+
     nomeP: {
         fontSize: 15
     },
@@ -34,5 +46,11 @@ export const styles = StyleSheet.create({
         backgroundColor: themes.colors2.pelecla,
         justifyContent: 'center',
         alignItems: 'center'
+    },
+
+    img: {
+        marginTop: 4,
+        height: 15,
+        width: 15
     }
 });

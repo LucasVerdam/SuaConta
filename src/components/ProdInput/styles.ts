@@ -13,7 +13,7 @@ export const styles = StyleSheet.create({
     },
 
     txt: {
-        fontSize: 17,
+        fontSize: 16,
         fontWeight: 'bold',
     },
 
@@ -48,4 +48,52 @@ export const styles = StyleSheet.create({
         marginBottom: 20,
         justifyContent: 'center'
     },
+
+    nomeP: {
+        marginBottom: 15,
+        flexDirection: 'row',
+        justifyContent: 'space-between'
+    },
+
+    valorU: {
+        marginBottom: 15,
+        flexDirection: 'row',
+        justifyContent: 'space-between'
+    },
+
+    qtd: {
+        marginBottom: 15,
+        flexDirection: 'row',
+        justifyContent: 'space-between'
+    },
+
+    qtdCount: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-evenly',
+        width: 150
+    },
+
+    qtdBox: {
+        flexDirection: 'row',
+        height: 40,
+        width: 40,
+        borderWidth: 0.5,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#fff'
+    },
+
+    names: {
+        marginTop: 15,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
+
+    img: {
+        marginTop: 2,
+        width: 13,
+        height: 13,
+    }
 });

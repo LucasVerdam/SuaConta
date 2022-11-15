@@ -9,12 +9,16 @@ import { styles } from './styles';
 
 export function Conta() {
 
-    const { produtos, valores } = global();
+    const { nomes, produtos, valores } = global();
 
     return (
         <View style={styles.container}>
 
-            <Integrantes />
+            {nomes.length > 0 ?
+                <Integrantes />
+                :
+                null
+            }
 
             {produtos.length > 0 ?
                 <Gastos />
@@ -22,41 +26,63 @@ export function Conta() {
                 null
             }
 
-            <View style={{ marginTop: 10, flexDirection: 'row', justifyContent: 'space-between', padding: 10 }}>
+            <View style={styles.valores}>
 
-                {valores.valDin == 0 ?
-                    <View>
-
-                    </View>
+                {valores.valDin == 0 && valores.valCard == 0 ?
+                    <View></View>
                     :
                     <View>
-                        <Text style={{ fontSize: 16, marginBottom: 5, fontWeight: '500' }}>
+                        <Text style={styles.textValorP}>
                             Valor pago:{' '}
-                            <Text style={{ fontSize: 14 }}>
+                            <Text style={styles.valorP}>
                                 R${(valores.valCard + valores.valDin).toFixed(2)}
                             </Text>
                         </Text>
 
-                        <Text>Em dinheiro: R${valores.valDin.toFixed(2)}</Text>
-                        <Text>No cartão: R${valores.valCard.toFixed(2)}</Text>
+                        {valores.valCard > 0 ?
+                            <>
+                                <Text>Em dinheiro: R${valores.valDin.toFixed(2)}</Text>
+                                <Text>No cartão: R${valores.valCard.toFixed(2)}</Text>
+                            </>
+                            :
+                            <Text>Em dinheiro</Text>
+                        }
                     </View>
                 }
 
-                <View style={{ justifyContent: 'flex-end' }}>
 
-                    <Text style={{ fontSize: 20, fontWeight: '500' }}>
-                        Total: R${valores.total.toFixed(2)}
-                    </Text>
+                {nomes.length == 0 ?
 
-                    {valores.trocoT > 0 ?
-                        <Text style={{ fontSize: 14 }}>
-                            Troco total: R${valores.trocoT.toFixed(2)}
+                    <View style={styles.totais}>
+
+                        <Text style={styles.total}>
+                            Sua parte: R${valores.total.toFixed(2)}
                         </Text>
-                        :
-                        null}
 
-                </View>
+                        {valores.trocoT > 0 ?
+                            <Text style={styles.trocoTotal}>
+                                Seu troco: R${valores.trocoT.toFixed(2)}
+                            </Text>
+                            :
+                            null}
 
+                    </View>
+                    :
+                    <View style={styles.totais}>
+
+                        <Text style={styles.total}>
+                            Total: R${valores.total.toFixed(2)}
+                        </Text>
+
+                        {valores.trocoT > 0 ?
+                            <Text style={styles.trocoTotal}>
+                                Troco total: R${valores.trocoT.toFixed(2)}
+                            </Text>
+                            :
+                            null}
+
+                    </View>
+                }
             </View>
         </View>
     );

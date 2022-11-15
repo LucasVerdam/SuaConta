@@ -4,7 +4,7 @@ import { Text, View, Alert, ScrollView } from 'react-native';
 import { MainBg } from '../../../components/MainBg';
 import { NextButton } from '../../../components/NextButton';
 import { BackButton } from '../../../components/BackButton';
-import { ProdInput } from '../../../components/ProdMInput';
+import { ProdInput } from '../../../components/ProdInput';
 import { CardProd } from '../../../components/CardProd';
 
 import { global } from '../../../context/ContaContext';

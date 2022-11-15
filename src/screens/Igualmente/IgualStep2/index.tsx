@@ -44,7 +44,7 @@ export function IgualStep2({ navigation }: any) {
                     />
 
                     <MoneyInput
-                        text='Vai ter gorjeta?'
+                        text={'Vai ter gorjeta?'}
                         subText='Opcional'
                         placeholder='%'
                         maxLenght={2}

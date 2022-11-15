@@ -12,11 +12,11 @@ import { styles } from './styles';
 
 export function MistaStep1({ navigation }: any) {
 
-    const { nomes, produtos } = global();
+    const { nomes, produtos, valores } = global();
 
     function end() {
 
-        if (nomes.length > 0) {
+        if (nomes.length > 0 || produtos.length > 0) {
             Alert.alert('Cancelar conta?', 'Todos os dados serão apagados.', [
                 {
                     text: 'Sim',
@@ -27,6 +27,11 @@ export function MistaStep1({ navigation }: any) {
                         while (produtos.length > 0) {
                             produtos.pop();
                         }
+                        valores.total = 0
+                        valores.valCard = 0
+                        valores.valDin = 0
+                        valores.trocoT = 0
+
                         navigation.navigate('Inicio');
                     }
                 },
@@ -41,6 +46,11 @@ export function MistaStep1({ navigation }: any) {
             while (produtos.length > 0) {
                 produtos.pop();
             }
+            valores.total = 0
+            valores.valCard = 0
+            valores.valDin = 0
+            valores.trocoT = 0
+
             navigation.navigate('Inicio');
         }
 

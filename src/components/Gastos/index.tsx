@@ -31,7 +31,7 @@ export function Gastos() {
 
                                 <View style={styles.valor}>
                                     <Text style={styles.msg}>Dividido por:</Text>
-                                    <Text style={styles.val}>{item.pessoas.length}</Text>
+                                    <Text style={styles.val}>{item.pessoas.length || item.qtdPessoas}</Text>
 
                                     <View style={styles.imgCont}>
                                         <Image style={styles.img} source={user}></Image>

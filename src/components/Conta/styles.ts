@@ -10,4 +10,29 @@ export const styles = StyleSheet.create({
         justifyContent: 'space-between',
         backgroundColor: themes.colors2.pelecla
     },
+
+    valores: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        marginTop: 10,
+        padding: 10
+    },
+    textValorP: {
+        fontSize: 16,
+        marginBottom: 5,
+        fontWeight: '500'
+    },
+    valorP: {
+        fontSize: 14
+    },
+    totais: {
+        justifyContent: 'flex-end'
+    },
+    trocoTotal: {
+        fontSize: 14
+    },
+    total: {
+        fontSize: 20,
+        fontWeight: '500'
+    }
 });

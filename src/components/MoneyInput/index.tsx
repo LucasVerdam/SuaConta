@@ -1,7 +1,8 @@
 import React from 'react';
 import { View, Text, TextInput } from 'react-native';
-import { styles } from './styles';
 
+import { global } from '../../context/ContaContext';
+import { styles } from './styles';
 
 interface Props {
     k?: number;
@@ -12,7 +13,11 @@ interface Props {
     onChangeText: any;
 }
 
+
 export function MoneyInput({ k, text, subText, placeholder, maxLenght = 7, onChangeText }: Props) {
+
+    const { valores } = global();
+
     return (
         <View style={{ marginBottom: 30 }}>
             <Text style={styles.txt1}>{text}</Text>
@@ -21,7 +26,10 @@ export function MoneyInput({ k, text, subText, placeholder, maxLenght = 7, onCha
                     <Text style={styles.txt2}>{subText}</Text>
                     : null}
 
-            <View style={{ alignItems: 'flex-end' }}>
+
+            <View style={{ flexDirection: 'row', justifyContent: 'flex-end', alignItems: 'center' }}>
+
+                {/* <Text style={{ fontSize: 17 }}>R${valores.total.toFixed(2)}  x</Text> */}
                 <TextInput
                     key={k}
                     style={styles.input}

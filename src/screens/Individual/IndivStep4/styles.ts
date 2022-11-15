@@ -1,7 +1,6 @@
 import { StyleSheet } from 'react-native';
 import { themes } from '../../../global/styles/themes';
 
-
 export const styles = StyleSheet.create({
     title: {
         fontWeight: '700',
@@ -10,14 +9,4 @@ export const styles = StyleSheet.create({
         textAlign: 'center',
         color: themes.colors2.preto,
     },
-
-    txt: {
-        fontSize: 20,
-        marginTop: 30,
-        paddingHorizontal: 15,
-        fontWeight: '300',
-        textAlign: 'left',
-        color: themes.colors2.cinzaTxt
-    },
 });
-

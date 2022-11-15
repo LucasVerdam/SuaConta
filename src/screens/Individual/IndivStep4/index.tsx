@@ -1,18 +1,24 @@
 import React from 'react';
-import { Text, Alert, ScrollView } from 'react-native';
+import { Alert, Text } from 'react-native';
 
+import { Conta } from '../../../components/Conta';
 import { MainBg } from '../../../components/MainBg';
-import { NextButton } from '../../../components/NextButton';
 import { BackButton } from '../../../components/BackButton';
-import { NamesInput } from '../../../components/NamesInput';
+import { NextButton } from '../../../components/NextButton';
 
 import { global } from '../../../context/ContaContext';
 import { styles } from './styles';
-import { Encerra } from '../../../components/EncerraBtn';
 
-export function IgualStep1({ navigation }: any) {
 
-    const { nomes, produtos, valores } = global()
+export function IndivStep4({ navigation }: any) {
+
+    const { nomes, produtos, valores } = global();
+
+    function zeraVDin() {
+        valores.valDin = 0
+        navigation.navigate('IndivStep3');
+    }
+
 
     function end() {
 
@@ -56,35 +62,17 @@ export function IgualStep1({ navigation }: any) {
 
     }
 
-    function nextStep() {
-        nomes.length > 1 ?
-            navigation.navigate('IgualStep2')
-            :
-            Alert.alert('Integrantes insuficientes!', 'Deve-se adicionar ao menos 2.', [
-                {
-                    text: 'OK',
-                    onPress() {
-                        null
-                    }
-                }
-            ])
-    }
-
     return (
-
         <MainBg
-            backBtn={<Encerra onPress={() => { end() }} />}
-            nextBtn={<NextButton onPress={() => { nextStep() }} />}
+            backBtn={<BackButton onPress={() => { zeraVDin() }} />}
+            nextBtn={<NextButton onPress={() => { end() }} />}
         >
             <>
-                <Text style={styles.title}>Igualmente</Text>
-                <ScrollView>
-                    <NamesInput />
-                </ScrollView>
-            </>
-        </MainBg >
+                <Text style={styles.title}>Sua Conta</Text>
 
+                <Conta />
+            </>
+
+        </MainBg>
     );
 }
-
-

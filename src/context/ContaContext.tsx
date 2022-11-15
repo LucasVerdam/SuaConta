@@ -24,6 +24,7 @@ export interface Conta {
         qtd: number;
         valorT: number;
         pessoas: string[];
+        qtdPessoas: number;
     }[]
     stateProdutos: (n: any) => any;
 

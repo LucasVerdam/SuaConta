@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { Text, Alert } from 'react-native';
 
 import { MainBg } from '../../../components/MainBg';
 import { BackButton } from '../../../components/BackButton';
@@ -14,18 +14,45 @@ export function MistaStep6({ navigation }: any) {
     const { nomes, produtos, valores } = global();
 
     function end() {
-        while (nomes.length > 0) {
-            nomes.pop();
+
+        if (nomes.length > 0 || produtos.length > 0) {
+            Alert.alert('Cancelar conta?', 'Todos os dados serão apagados.', [
+                {
+                    text: 'Sim',
+                    onPress() {
+                        while (nomes.length > 0) {
+                            nomes.pop();
+                        }
+                        while (produtos.length > 0) {
+                            produtos.pop();
+                        }
+                        valores.total = 0
+                        valores.valCard = 0
+                        valores.valDin = 0
+                        valores.trocoT = 0
+
+                        navigation.navigate('Inicio');
+                    }
+                },
+                {
+                    text: 'Não',
+                    onPress() {
+                        null
+                    }
+                }
+            ])
+        } else {
+            while (produtos.length > 0) {
+                produtos.pop();
+            }
+            valores.total = 0
+            valores.valCard = 0
+            valores.valDin = 0
+            valores.trocoT = 0
+
+            navigation.navigate('Inicio');
         }
 
-        while (produtos.length > 0) {
-            produtos.pop();
-        }
-
-        valores.total = 0
-        valores.valCard = 0
-        valores.valDin = 0
-        valores.trocoT = 0
     }
 
     function zeraV() {
@@ -44,7 +71,7 @@ export function MistaStep6({ navigation }: any) {
     return (
         <MainBg
             backBtn={<BackButton onPress={() => { zeraV(); navigation.navigate('MistaStep5') }} />}
-            nextBtn={<NextButton onPress={() => { end(); navigation.navigate('Inicio') }} />}
+            nextBtn={<NextButton onPress={() => { end(); }} />}
         >
             <>
                 <Text style={styles.title}>Sua Conta</Text>

@@ -21,9 +21,9 @@ export function Welcome({ navigation }: any) {
 
                     </Text>
 
-                    <View style={{ alignItems: 'center' }}>
+                    {/* <View style={{ alignItems: 'center' }}>
                         <Image style={{ width: 150, height: 150, borderRadius: 75 }} source={{ uri: 'https://mega.ibxk.com.br/2015/08/04/04183918599721.jpg?ims=610x' }}></Image>
-                    </View>
+                    </View> */}
 
                     <Text style={styles.tx1}>
 

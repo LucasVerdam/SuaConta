@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, ScrollView, FlatList, TextInput, Alert } from 'react-native';
+import { View, Text, TextInput, Alert } from 'react-native';
 
 import { global } from '../../context/ContaContext';
 import { AddBtn } from '../AddButton';
@@ -82,7 +82,10 @@ export function NamesInput() {
 
             {nomes.map((i) => {
                 return (
-                    <View style={styles.list}>
+                    <View
+                        key={i.id}
+                        style={styles.list}
+                    >
                         <Text style={styles.listItem}>
                             {i.id + 1}. {i.nome}
                         </Text>

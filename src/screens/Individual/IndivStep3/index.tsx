@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { View, Text } from 'react-native';
+import { Alert, View, Text } from 'react-native';
 
 import { MainBg } from '../../../components/MainBg';
 import { BackButton } from '../../../components/BackButton';
-import { NextButton } from '../../../components/NextButton';
+import { ContaBtn } from '../../../components/ContaBtn';
 import { ITrocoInput } from '../../../components/ITrocoInput';
 
 import { global } from '../../../context/ContaContext';
@@ -26,17 +26,34 @@ export function IndivStep3({ navigation }: any) {
     }
 
     function valorT() {
-        valores.trocoT = valores.valDin - valores.total
 
-        setKey(key + 1)
+        let x = false
 
-        navigation.navigate('IndivStep4');
+        if (valores.valDin != 0 && valores.valDin < valores.total) {
+            Alert.alert('O valor pago não pode ser menor que a conta!', '', [
+                {
+                    text: 'OK',
+                    onPress() { }
+                }
+            ])
+            return x = true
+        }
+
+        if (x) {
+            null
+        } else {
+            valores.trocoT = valores.valDin - valores.total
+
+            setKey(key + 1)
+
+            navigation.navigate('IndivStep4');
+        }
     }
 
     return (
         <MainBg
             backBtn={<BackButton onPress={() => { zeraV() }} />}
-            nextBtn={<NextButton onPress={() => { valorT() }} />}
+            nextBtn={<ContaBtn onPress={() => { valorT() }} />}
         >
             <>
                 <Text style={styles.title}>Mista</Text>

@@ -3,7 +3,7 @@ import { Text, Alert } from 'react-native';
 
 import { MainBg } from '../../../components/MainBg';
 import { BackButton } from '../../../components/BackButton';
-import { NextButton } from '../../../components/NextButton';
+import { Encerra } from '../../../components/EncerraBtn';
 import { Conta } from '../../../components/Conta';
 
 import { global } from '../../../context/ContaContext';
@@ -71,7 +71,7 @@ export function MistaStep6({ navigation }: any) {
     return (
         <MainBg
             backBtn={<BackButton onPress={() => { zeraV(); navigation.navigate('MistaStep5') }} />}
-            nextBtn={<NextButton onPress={() => { end(); }} />}
+            nextBtn={<Encerra onPress={() => { end(); }} />}
         >
             <>
                 <Text style={styles.title}>Sua Conta</Text>

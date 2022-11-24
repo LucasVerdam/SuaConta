@@ -8,6 +8,7 @@ export const themes = {
         azulesc: '#ED5E37',
         azulcla: '#D9D5FF',
         laranja: '#f79983',
+        vermelho: '#f45',
         pele: '#BFFB60',
         pelecla: '#fcfae3',
         cinzaTxt: '#252A36',

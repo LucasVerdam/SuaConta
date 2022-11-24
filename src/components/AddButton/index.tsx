@@ -1,6 +1,9 @@
 import React from 'react';
-import { Text, Pressable, TouchableOpacity } from 'react-native';
+import { Image, TouchableOpacity } from 'react-native';
+
+import plus from '../../assets/plus.png'
 import { styles } from './styles';
+
 
 interface Props {
     func: () => any;
@@ -13,9 +16,10 @@ export function AddBtn({ func }: Props) {
             onPress={func}
         >
 
-            <Text style={styles.txt}>
-                +
-            </Text>
+            <Image
+                source={plus}
+                style={styles.img}
+            />
 
         </TouchableOpacity>
     );

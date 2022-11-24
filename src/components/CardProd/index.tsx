@@ -14,6 +14,7 @@ interface PModel {
     valor: number;
     valorT: number;
     pessoas: string[];
+    qtdPessoas: number;
 }
 
 export function CardProd() {
@@ -21,20 +22,14 @@ export function CardProd() {
     const { produtos, stateProdutos } = global();
     const [prods, setProds] = useState([...produtos])
 
-    function popP(P: PModel) {
-        produtos.map((i) => {
-            if (i.id == P.id) {
-                produtos.splice(i.id, 1)
-            }
-        })
-    }
 
-    function setP(prod: any) {
-        setProds(prod)
+    function popP(i: PModel) {
+        produtos.splice(produtos.indexOf(i), 1);
+        stateProdutos([...produtos])
     }
 
     useEffect(() => {
-        setP(produtos)
+        setProds([...produtos])
     }, [produtos])
 
 
@@ -43,12 +38,10 @@ export function CardProd() {
             {produtos.length > 0 ?
                 prods.map((i) => {
                     return (
-                        <View key={i.nome} style={styles.container}>
+                        <View key={i.id} style={styles.container}>
 
                             <TouchableOpacity
-                                onPress={() => {
-                                    popP(i); stateProdutos([...produtos]);
-                                }}
+                                onPress={() => { popP(i); }}
                                 style={styles.popBtn}>
 
                                 <Text style={{ fontSize: 16, color: '#fff' }}>X</Text>

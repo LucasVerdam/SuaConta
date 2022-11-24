@@ -19,16 +19,9 @@ export function MistaStep2({ navigation }: any) {
     function zeraC() {
 
         if (produtos.length > 0) {
-            Alert.alert('Manter produtos?', 'SIM irá manter os produtos / NÃO irá remove-los.', [
+            Alert.alert('Voltar?', 'Isso irá remover produtos já adicionados.', [
                 {
                     text: 'Sim',
-                    onPress() {
-                        nomes.map((i) => nomes[i.id].pgmtP = false);
-                        navigation.navigate('MistaStep1')
-                    }
-                },
-                {
-                    text: 'Não',
                     onPress() {
                         nomes.map((i) => nomes[i.id].pgmtP = false)
 
@@ -37,6 +30,10 @@ export function MistaStep2({ navigation }: any) {
                         }
                         navigation.navigate('MistaStep1');
                     }
+                },
+                {
+                    text: 'Não',
+                    onPress() { }
                 }
             ])
         } else {

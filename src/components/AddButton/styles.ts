@@ -13,11 +13,10 @@ export const styles = StyleSheet.create({
         backgroundColor: themes.colors2.azulesc
     },
 
-    txt: {
-        position: 'absolute',
-        fontSize: 25,
-        fontWeight: '500',
-        color: "#fff",
+    img: {
+        height: 25,
+        width: 25,
+        tintColor: '#fff'
     }
 
 });

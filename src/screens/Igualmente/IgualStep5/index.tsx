@@ -2,8 +2,8 @@ import React from 'react';
 import { Text, Alert } from 'react-native';
 
 import { MainBg } from '../../../components/MainBg';
-import { NextButton } from '../../../components/NextButton';
 import { BackButton } from '../../../components/BackButton';
+import { Encerra } from '../../../components/EncerraBtn';
 import { Conta } from '../../../components/Conta';
 
 import { global } from '../../../context/ContaContext';
@@ -73,7 +73,7 @@ export function IgualStep5({ navigation }: any) {
 
         <MainBg
             backBtn={<BackButton onPress={() => { zeraV(); }} />}
-            nextBtn={<NextButton onPress={() => { end(); }} />}
+            nextBtn={<Encerra onPress={() => { end(); }} />}
         >
             <>
                 <Text style={styles.title}>Sua Conta</Text>

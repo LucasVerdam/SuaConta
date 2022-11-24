@@ -78,18 +78,14 @@ export function ProdInput() {
             } else {
                 let produto = { ...produtoModel }
 
-                produto.id = produtos.length
+                produto.id = key
                 produto.nome = nomeP
                 produto.qtd = qtd
                 produto.valor = valorP
                 produto.valorT = valorP * qtd
 
-                if (nomes.length > 0) {
-                    nomes.map((i) => { i.pgmtP ? produto.pessoas.push(i.nome) : null; })
-                    produto.qtdPessoas = produto.pessoas.length
-                } else {
-                    produto.qtdPessoas = qtdP
-                }
+                nomes.map((i) => { i.pgmtP ? produto.pessoas.push(i.nome) : null; })
+                produto.qtdPessoas = produto.pessoas.length
 
                 produtos.push(produto)
                 stateProdutos([...produtos])
@@ -115,18 +111,12 @@ export function ProdInput() {
 
             let produto = { ...produtoModel }
 
-            produto.id = produtos.length
+            produto.id = key
             produto.nome = nomeP
             produto.qtd = qtd
             produto.valor = valorP
             produto.valorT = valorP * qtd
-
-            if (nomes.length > 0) {
-                nomes.map((i) => { i.pgmtP ? produto.pessoas.push(i.nome) : null; })
-                produto.qtdPessoas = produto.pessoas.length
-            } else {
-                produto.qtdPessoas = qtdP
-            }
+            produto.qtdPessoas = qtdP
 
             produtos.push(produto)
             stateProdutos([...produtos])

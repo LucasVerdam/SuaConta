@@ -1,5 +1,7 @@
 import React from 'react';
-import { Text, TouchableOpacity } from 'react-native';
+import { Image, TouchableOpacity } from 'react-native';
+
+import minus from '../../assets/minus.png'
 import { styles } from './styles';
 
 interface Props {
@@ -11,9 +13,12 @@ export function PopBtn({ func }: Props) {
         <TouchableOpacity style={styles.popBtn}
             onPress={func}
         >
-            <Text style={styles.txt}>
-                -
-            </Text>
+
+            <Image
+                source={minus}
+                style={styles.img}
+            />
+
         </TouchableOpacity>
     );
 }

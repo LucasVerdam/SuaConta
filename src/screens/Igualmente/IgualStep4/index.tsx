@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { ScrollView, Text, View } from 'react-native';
+import { Alert, ScrollView, Text, View } from 'react-native';
 
 import { MainBg } from '../../../components/MainBg';
-import { NextButton } from '../../../components/NextButton';
+import { ContaBtn } from '../../../components/ContaBtn';
 import { BackButton } from '../../../components/BackButton';
 import { TrocoInput } from '../../../components/TrocoInput';
 import { PgmtC } from '../../../components/PgmtC';
@@ -22,34 +22,57 @@ export function IgualStep4({ navigation }: any) {
             nomes[i.id].dinheiro = 0
             nomes[i.id].troco = 0
         })
+
+        navigation.navigate('IgualStep3');
     }
 
     function conta() {
-        //troco
+
+        let x = false
+
         nomes.map(i => {
-            if (nomes[i.id].pgmtC == false && nomes[i.id].dinheiro != 0) {
-                nomes[i.id].troco = nomes[i.id].dinheiro - nomes[i.id].conta
-                valores.trocoT += nomes[i.id].troco
+            if (i.dinheiro != 0 && i.dinheiro < i.conta) {
+                Alert.alert('O valor pago não pode ser menor que a conta!', '', [
+                    {
+                        text: 'OK',
+                        onPress() { }
+                    }
+                ])
+                return x = true
             }
         })
 
-        //total no cartão else total no dinheiro
-        nomes.map(i => {
-            if (nomes[i.id].pgmtC == true) {
-                valores.valCard += nomes[i.id].conta
-            } else {
-                valores.valDin += nomes[i.id].dinheiro
-            }
-        })
 
-        setKey(key + 1)
+        if (x) {
+            null
+        } else {
+            //troco
+            nomes.map(i => {
+                if (nomes[i.id].pgmtC == false && nomes[i.id].dinheiro != 0) {
+                    nomes[i.id].troco = nomes[i.id].dinheiro - nomes[i.id].conta
+                    valores.trocoT += nomes[i.id].troco
+                }
+            })
+
+            //total no cartão else total no dinheiro
+            nomes.map(i => {
+                if (nomes[i.id].pgmtC == true) {
+                    valores.valCard += nomes[i.id].conta
+                } else {
+                    valores.valDin += nomes[i.id].dinheiro
+                }
+            })
+
+            setKey(key + 1)
+            navigation.navigate('IgualStep5');
+        }
     }
 
     return (
 
         <MainBg
-            backBtn={<BackButton onPress={() => { zeraV(); navigation.navigate('IgualStep3'); }} />}
-            nextBtn={<NextButton onPress={() => { conta(); navigation.navigate('IgualStep5'); }} />}
+            backBtn={<BackButton onPress={() => { zeraV(); }} />}
+            nextBtn={<ContaBtn onPress={() => { conta(); }} />}
         >
 
             <ScrollView>

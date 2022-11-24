@@ -10,7 +10,7 @@ export const styles = StyleSheet.create({
         borderBottomRightRadius: 8,
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: themes.colors2.vermelho
+        backgroundColor: themes.colors2.azulesc
     },
 
     txtBtn: {

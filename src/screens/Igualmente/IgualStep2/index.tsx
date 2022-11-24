@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Text, ScrollView } from 'react-native';
+import { Alert, Text, ScrollView } from 'react-native';
 
 import { MainBg } from '../../../components/MainBg';
 import { NextButton } from '../../../components/NextButton';
@@ -16,21 +16,42 @@ export function IgualStep2({ navigation }: any) {
 
     const [conta, setConta] = useState(0)
     const [gorj, setGorj] = useState(0)
-
+    const [key, setKey] = useState(0)
 
     function div() {
-        const gorjeta = conta * gorj / 100
-        const total = Number(conta) + Number(gorjeta)
 
-        valores.total = total
+        if (conta == 0) {
+            Alert.alert('Informe o valor da conta!', '', [
+                {
+                    text: 'OK',
+                    onPress() { }
+                },
+            ])
+        } else {
 
-        nomes.map((i) => i.conta = total / nomes.length)
+            const gorjeta = conta * gorj / 100
+            const total = Number(conta) + Number(gorjeta)
+
+            valores.total = total
+
+            nomes.map((i) => i.conta = total / nomes.length)
+
+            setConta(0)
+            setGorj(0)
+
+            setTimeout(() => {
+                setKey(key + 1)
+            }, 500)
+
+            navigation.navigate('IgualStep3')
+        }
+
     }
 
     return (
         <MainBg
             backBtn={<BackButton onPress={() => navigation.navigate('IgualStep1')} />}
-            nextBtn={<NextButton onPress={() => { div(); navigation.navigate('IgualStep3') }} />}
+            nextBtn={<NextButton onPress={() => { div(); }} />}
         >
 
             <>
@@ -38,12 +59,14 @@ export function IgualStep2({ navigation }: any) {
 
                 <ScrollView>
                     <MoneyInput
+                        k={key}
                         text={`Quanto deu a conta?`}
                         placeholder='Total'
                         onChangeText={setConta}
                     />
 
                     <MoneyInput
+                        k={key}
                         text={'Vai ter gorjeta?'}
                         subText='Opcional'
                         placeholder='%'

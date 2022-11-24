@@ -29,14 +29,6 @@ export function Gastos() {
 
                             <View style={styles.valores}>
 
-                                <View style={styles.valor}>
-                                    <Text style={styles.msg}>Dividido por:</Text>
-                                    <Text style={styles.val}>{item.pessoas.length || item.qtdPessoas}</Text>
-
-                                    <View style={styles.imgCont}>
-                                        <Image style={styles.img} source={user}></Image>
-                                    </View>
-                                </View>
 
                                 <View style={styles.valor}>
                                     <Text style={styles.msg}>Valor unitário:</Text>
@@ -53,6 +45,14 @@ export function Gastos() {
                                     <Text style={styles.val}>R${item.valorT.toFixed(2)}</Text>
                                 </View>
 
+                                <View style={styles.valor}>
+                                    <Text style={styles.msg}>Dividido por:</Text>
+                                    <Text style={styles.val}>{item.pessoas.length || item.qtdPessoas}</Text>
+
+                                    <View style={styles.imgCont}>
+                                        <Image style={styles.img} source={user}></Image>
+                                    </View>
+                                </View>
 
                             </View>
 

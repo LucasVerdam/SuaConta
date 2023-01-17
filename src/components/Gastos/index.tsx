@@ -23,7 +23,7 @@ export function Gastos() {
 
                         <View style={styles.conta} key={item.id}>
                             <View style={styles.nome}>
-                                <Text style={{ fontSize: 16, fontWeight: '600' }}>{item.id + 1}.{item.nome}</Text>
+                                <Text style={{ fontSize: 16, fontWeight: '600' }}>{produtos.indexOf(item) + 1}.{item.nome}</Text>
                             </View>
 
 

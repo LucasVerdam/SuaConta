@@ -56,7 +56,7 @@ export function IndivStep3({ navigation }: any) {
             nextBtn={<ContaBtn onPress={() => { valorT() }} />}
         >
             <>
-                <Text style={styles.title}>Mista</Text>
+                <Text style={styles.title}>Individual</Text>
 
                 <Text style={styles.txt}>Valor que será pago em dinheiro:</Text>
                 <Text style={styles.txt2}>(se for em dinheiro)</Text>

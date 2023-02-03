@@ -13,4 +13,6 @@ Disciplina: Trabalho de Conclusão de Curso - Prof. Caio Daoud
 
 Status: Em produção...
 
+Link para download do App: https://play.google.com/store/apps/details?id=com.lucasverdam.suacontaTS
+
 Email para contato: lucanis12t@gmail.com

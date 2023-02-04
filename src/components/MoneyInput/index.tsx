@@ -33,7 +33,7 @@ export function MoneyInput({ k, text, subText, placeholder, maxLenght = 7, onCha
                     placeholder={placeholder}
                     keyboardType='decimal-pad'
                     maxLength={maxLenght}
-                    onChangeText={onChangeText}
+                    onChangeText={(n) => onChangeText(parseFloat(n.replace(',', '.')))}
                 ></TextInput>
             </View>
         </View>

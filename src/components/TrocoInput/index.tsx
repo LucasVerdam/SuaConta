@@ -18,7 +18,7 @@ export function TrocoInput({ k, id, nome, conta }: Props) {
 
     function Set(valor: string) {
         setValor(valor)
-        nomes[id].dinheiro = Number(valor)
+        nomes[id].dinheiro = parseFloat(valor.replace(',', '.'))
         stateNomes([...nomes])
     }
 

@@ -36,17 +36,25 @@ export function Integrantes() {
                                 {item.pgmtC ?
                                     <Text style={styles.msg}>Pago no cartão.</Text>
                                     :
-                                    <>
+                                    item.dinheiro != 0 ?
+                                        <>
+                                            <View style={styles.valor}>
+                                                <Text style={styles.msg}>Pago com:   </Text>
+                                                <Text style={styles.val}>R${item.dinheiro.toFixed(2)}</Text>
+                                            </View>
+
+                                            <View style={styles.valor}>
+                                                <Text style={styles.msg}>Troco:</Text>
+                                                <Text style={styles.val}>R${item.troco.toFixed(2)}</Text>
+                                            </View>
+                                        </>
+                                        :
                                         <View style={styles.valor}>
                                             <Text style={styles.msg}>Pago com:   </Text>
-                                            <Text style={styles.val}>R${item.dinheiro.toFixed(2)}</Text>
+                                            <Text style={styles.val}>Não informado.</Text>
                                         </View>
 
-                                        <View style={styles.valor}>
-                                            <Text style={styles.msg}>Troco:</Text>
-                                            <Text style={styles.val}>R${item.troco.toFixed(2)}</Text>
-                                        </View>
-                                    </>
+
                                 }
 
                             </View>

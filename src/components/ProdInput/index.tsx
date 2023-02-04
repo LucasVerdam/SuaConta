@@ -160,7 +160,7 @@ export function ProdInput() {
                         placeholder='R$'
                         keyboardType='decimal-pad'
                         maxLength={7}
-                        onChangeText={(n) => setValorP(Number(n))}
+                        onChangeText={(n) => setValorP(parseFloat(n.replace(',', '.')))}
                     />
                 </View>
 

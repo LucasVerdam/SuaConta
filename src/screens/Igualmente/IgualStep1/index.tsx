@@ -3,16 +3,21 @@ import { Text, Alert, ScrollView } from 'react-native';
 
 import { MainBg } from '../../../components/MainBg';
 import { NextButton } from '../../../components/NextButton';
-import { BackButton } from '../../../components/BackButton';
+import { Encerra } from '../../../components/EncerraBtn';
 import { NamesInput } from '../../../components/NamesInput';
+
+import { useBackHandler } from '@react-native-community/hooks';
 
 import { global } from '../../../context/ContaContext';
 import { styles } from './styles';
-import { Encerra } from '../../../components/EncerraBtn';
 
 export function IgualStep1({ navigation }: any) {
 
     const { nomes, produtos, valores } = global()
+
+    useBackHandler(() => {
+        return true
+    })
 
     function end() {
 

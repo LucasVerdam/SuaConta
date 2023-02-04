@@ -3,28 +3,29 @@ import { View, Text } from "react-native";
 
 import { MainBg } from "../../components/MainBg";
 import { DivButton } from '../../components/Divbutton'
-import { NextButton } from "../../components/NextButton";
-import { BackButton } from "../../components/BackButton";
+import { HelpBtn } from "../../components/HelpBtn";
 
 import user from '../../assets/user.png'
 import users3 from '../../assets/users3.png'
 import users4 from '../../assets/users4.png'
+
+import { useBackHandler } from '@react-native-community/hooks'
 
 import { styles } from "./styles";
 
 
 export function Inicio({ navigation }: any) {
 
+
     return (
 
         <MainBg>
             <>
-
                 <View style={styles.body}>
 
                     <View style={styles.container}>
                         <Text style={styles.msg}>
-                            Como gostaria de fechar{'\n'}a conta hoje?
+                            Como gostaria de dividir{'\n'}a conta hoje?
                         </Text>
                     </View>
 
@@ -45,8 +46,11 @@ export function Inicio({ navigation }: any) {
                         toScreen={'MistaStep1'}
                         source={users4}
                         navigation={navigation} />
-
                 </View>
+
+                <HelpBtn
+                    nav={navigation}
+                />
             </>
 
         </MainBg>

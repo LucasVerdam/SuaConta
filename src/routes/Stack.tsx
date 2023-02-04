@@ -22,7 +22,11 @@ import { MistaStep4 } from "../screens/Mista/MistaStep4";
 import { MistaStep5 } from "../screens/Mista/MistaStep5";
 import { MistaStep6 } from "../screens/Mista/MistaStep6";
 
-
+import { Intro } from "../screens/Help/Intro";
+import { Indiv } from "../screens/Help/Indiv";
+import { Igual } from "../screens/Help/Igual";
+import { Mista } from "../screens/Help/Mista";
+import { End } from "../screens/Help/End";
 
 
 const Stack = createNativeStackNavigator();
@@ -50,6 +54,12 @@ export function StackNav() {
             <Stack.Screen name="MistaStep4" component={MistaStep4} />
             <Stack.Screen name="MistaStep5" component={MistaStep5} />
             <Stack.Screen name="MistaStep6" component={MistaStep6} />
+
+            <Stack.Screen name="Intro" component={Intro} />
+            <Stack.Screen name="Indiv" component={Indiv} />
+            <Stack.Screen name="Igual" component={Igual} />
+            <Stack.Screen name="Mista" component={Mista} />
+            <Stack.Screen name="End" component={End} />
         </Stack.Navigator>
     );
 }

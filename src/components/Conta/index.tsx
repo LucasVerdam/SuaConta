@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, ScrollView } from 'react-native';
 
 import { Integrantes } from '../Integrantes';
 import { Gastos } from '../Gastos';
@@ -14,17 +14,24 @@ export function Conta() {
     return (
         <View style={styles.container}>
 
-            {nomes.length > 0 ?
-                <Integrantes />
-                :
-                null
-            }
+            <ScrollView
+                persistentScrollbar
+                horizontal
+                style={{ marginRight: 10, }}
+            >
 
-            {produtos.length > 0 ?
-                <Gastos />
-                :
-                null
-            }
+                {nomes.length > 0 ?
+                    <Integrantes />
+                    :
+                    null
+                }
+
+                {produtos.length > 0 ?
+                    <Gastos />
+                    :
+                    null
+                }
+            </ScrollView>
 
             <View style={styles.valores}>
 

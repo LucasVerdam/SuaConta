@@ -16,8 +16,8 @@ export function Welcome({ navigation }: any) {
 
                     <Text style={styles.title}>
 
-                        Seja bem vindo ao{'\n'}
-                        <Text style={{ fontWeight: 'bold' }}>SuaConta!</Text>
+                        Bem vindo ao{'\n'}
+                        <Text style={{ fontWeight: 'bold' }}>Sua Conta!</Text>
 
                     </Text>
 

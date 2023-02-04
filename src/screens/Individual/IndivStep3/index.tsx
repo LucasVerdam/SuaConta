@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Alert, View, Text } from 'react-native';
+import { Alert, View, Text, ScrollView } from 'react-native';
 
 import { MainBg } from '../../../components/MainBg';
 import { BackButton } from '../../../components/BackButton';
@@ -55,7 +55,7 @@ export function IndivStep3({ navigation }: any) {
             backBtn={<BackButton onPress={() => { zeraV() }} />}
             nextBtn={<ContaBtn onPress={() => { valorT() }} />}
         >
-            <>
+            <ScrollView>
                 <Text style={styles.title}>Individual</Text>
 
                 <Text style={styles.txt}>Valor que será pago em dinheiro:</Text>
@@ -64,7 +64,7 @@ export function IndivStep3({ navigation }: any) {
                 <View style={{ marginVertical: 10 }}>
                     <ITrocoInput key={key} />
                 </View>
-            </>
+            </ScrollView>
 
         </MainBg>
     );

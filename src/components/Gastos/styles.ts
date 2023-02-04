@@ -1,10 +1,12 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
 import { themes } from '../../global/styles/themes';
+
+const Larg = Dimensions.get('window').width * 0.8
 
 export const styles = StyleSheet.create({
     gastos: {
         flex: 1,
-        maxHeight: 250,
+        width: Larg,
         margin: 10,
         paddingBottom: 10,
         borderRadius: 8,

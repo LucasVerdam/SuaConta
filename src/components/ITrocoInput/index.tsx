@@ -12,7 +12,7 @@ export function ITrocoInput() {
 
     function Set(valor: string) {
         setValor(valor)
-        valores.valDin = Number(valor)
+        valores.valDin = parseFloat(valor.replace(',', '.'))
     }
 
     return (

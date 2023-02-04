@@ -6,12 +6,23 @@ import { BackButton } from '../../../components/BackButton';
 import { Encerra } from '../../../components/EncerraBtn';
 import { Conta } from '../../../components/Conta';
 
+import { useBackHandler } from '@react-native-community/hooks'
+
 import { global } from '../../../context/ContaContext';
 import { styles } from './styles';
 
 export function MistaStep6({ navigation }: any) {
 
     const { nomes, produtos, valores } = global();
+
+    useBackHandler(() => {
+        if (nomes) {
+            // handle it
+            return true
+        }
+        // let the default thing happen
+        return false
+    })
 
     function end() {
 
@@ -65,12 +76,14 @@ export function MistaStep6({ navigation }: any) {
         valores.valCard = 0
         valores.valDin = 0
         valores.trocoT = 0
+
+        navigation.navigate('MistaStep5')
     }
 
 
     return (
         <MainBg
-            backBtn={<BackButton onPress={() => { zeraV(); navigation.navigate('MistaStep5') }} />}
+            backBtn={<BackButton onPress={() => { zeraV(); }} />}
             nextBtn={<Encerra onPress={() => { end(); }} />}
         >
             <>

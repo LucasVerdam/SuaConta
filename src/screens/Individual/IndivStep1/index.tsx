@@ -7,6 +7,8 @@ import { NextButton } from '../../../components/NextButton';
 import { CardProd } from '../../../components/CardProd';
 import { ProdInput } from '../../../components/ProdInput';
 
+import { useBackHandler } from '@react-native-community/hooks';
+
 import { global } from '../../../context/ContaContext';
 import { styles } from './styles';
 
@@ -14,6 +16,10 @@ import { styles } from './styles';
 export function IndivStep1({ navigation }: any) {
 
     const { nomes, valores, produtos } = global();
+
+    useBackHandler(() => {
+        return true
+    })
 
     function end() {
 

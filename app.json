@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "suacontaTS",
-    "slug": "suacontaTS",
+    "name": "Sua Conta",
+    "slug": "sua-conta",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -25,15 +25,16 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       },
-      "package": "com.lucasverdam.suacontaTS"
+      "package": "com.lucasverdam.suaconta"
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "extra": {
       "eas": {
-        "projectId": "a14338a7-12e7-41c1-8969-6d1092f64bc8"
+        "projectId": "196a3b38-bcb2-47d4-8211-600cee726d6d"
       }
-    }
+    },
+    "owner": "lucasverdam"
   }
 }

@@ -1,9 +1,0 @@
-{
-    "BoxViewStyle": {
-        "prefix": "boxS",
-        "body": [
-            "width:100, height: 100, backgroundColor:'#3f3f3f'",
-        ],
-        "description": "Log output to console"
-    }
-}

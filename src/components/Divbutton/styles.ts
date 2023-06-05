@@ -5,8 +5,8 @@ import { themes } from "../../global/styles/themes";
 export const styles = StyleSheet.create({
 
     button: {
-        height: 100,
-        width: 100,
+        height: 105,
+        width: 105,
         borderRadius: 8,
         borderBottomEndRadius: 32,
         borderTopLeftRadius: 32,
@@ -16,9 +16,10 @@ export const styles = StyleSheet.create({
     },
 
     textBtn: {
-        fontSize: 15,
+        fontSize: 18,
+        marginTop: 4,
         fontWeight: '500',
-        color: 'black'
+        color: '#000'
     },
 
     img: {

@@ -12,13 +12,13 @@ interface Props {
 
 export function MainBg({ children, backBtn, nextBtn }: Props) {
     return (
-        <>
+        <View style={{ flex: 1, backgroundColor: '#C4C4C4' }}>
             <Header />
             <View style={{ flex: 1 }}>
                 {children}
             </View>
             <Footer backBtn={backBtn} nextBtn={nextBtn} />
-        </>
+        </View>
 
     );
 }

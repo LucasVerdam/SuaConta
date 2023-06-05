@@ -13,13 +13,13 @@ export const styles = StyleSheet.create({
     title: {
         fontSize: 28,
         textAlign: 'center',
-
     },
 
     tx1: {
         fontSize: 22,
         textAlign: 'left',
-        paddingLeft: 15
+        paddingLeft: 15,
+        color: '#000'
     },
 
     tx2: {

@@ -22,13 +22,13 @@ export function Mista({ navigation }: any) {
 
                     <Text style={styles.tx2}>
 
-                        Quando o valor de <Text style={{ fontWeight: 'bold' }}>
+                        Quando o valor de <Text style={{ fontWeight: 'bold', color: '#2f2f2f' }}>
                             um </Text>
-                        ou <Text style={{ fontWeight: 'bold' }}>
+                        ou <Text style={{ fontWeight: 'bold', color: '#2f2f2f' }}>
                             mais </Text>
-                        produtos será dividido entre <Text style={{ fontWeight: 'bold' }}>
+                        produtos será dividido entre <Text style={{ fontWeight: 'bold', color: '#2f2f2f' }}>
                             alguns </Text>
-                        ou <Text style={{ fontWeight: 'bold' }}>
+                        ou <Text style={{ fontWeight: 'bold', color: '#2f2f2f' }}>
                             todos </Text>
                         do grupo.
 
@@ -36,11 +36,11 @@ export function Mista({ navigation }: any) {
 
                     <Text style={styles.tx1}>
 
-                        Informe os <Text style={{ fontWeight: 'bold' }}>
+                        Informe os <Text style={{ fontWeight: 'bold', color: '#2f2f2f' }}>
                             nomes</Text>
-                        , o que será{'\n'} <Text style={{ fontWeight: 'bold' }}>
+                        , o que será{'\n'} <Text style={{ fontWeight: 'bold', color: '#2f2f2f' }}>
                             pago </Text>
-                        e por <Text style={{ fontWeight: 'bold' }}>
+                        e por <Text style={{ fontWeight: 'bold', color: '#2f2f2f' }}>
                             quem. </Text>
                         E pronto!
 

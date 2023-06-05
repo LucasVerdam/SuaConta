@@ -19,9 +19,10 @@ export const styles = StyleSheet.create({
     },
 
     tx1: {
-        fontSize: 23,
+        fontSize: 25,
         textAlign: 'center',
-        paddingLeft: 15
+        paddingLeft: 15,
+        color: '#3f3f3f'
     },
 
     tx2: {

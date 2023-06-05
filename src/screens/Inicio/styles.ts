@@ -6,20 +6,21 @@ import { Dimensions } from "react-native";
 export const styles = StyleSheet.create({
 
     container: {
-        borderRadius: 10
+        borderRadius: 10,
+        marginBottom: -30
     },
 
     msg: {
-        fontSize: 20,
+        fontSize: 23,
         textAlign: 'center',
-        color: '#000'
+        color: '#3f3f3f'
     },
 
     body: {
         flex: 1,
         justifyContent: 'space-around',
         alignItems: 'center',
-        backgroundColor: '#fff'
+        backgroundColor: '#C4C4C4'
     },
 
 })

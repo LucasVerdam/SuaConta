@@ -23,17 +23,17 @@ export function Igual({ navigation }: any) {
                     <Text style={styles.tx1}>
 
                         Quando todos forem dividir{'\n'}
-                        o valor da conta por <Text style={{ fontWeight: 'bold' }}>
+                        o valor da conta por <Text style={{ fontWeight: 'bold', color: '#2f2f2f' }}>
                             igual!</Text>
 
                     </Text>
 
                     <Text style={styles.tx2}>
 
-                        É só informar o valor <Text style={{ fontWeight: 'bold' }}>
+                        É só informar o valor <Text style={{ fontWeight: 'bold', color: '#2f2f2f' }}>
                             total </Text>
                         e{'\n'}
-                        por <Text style={{ fontWeight: 'bold' }}>
+                        por <Text style={{ fontWeight: 'bold', color: '#2f2f2f' }}>
                             quem </Text>
                         ele será dividido.
 

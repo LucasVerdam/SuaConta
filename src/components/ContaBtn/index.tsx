@@ -4,10 +4,11 @@ import { View, Text, TouchableOpacity } from 'react-native';
 import { styles } from './styles';
 
 interface Props {
+    text?: string;
     onPress: () => void;
 }
 
-export function ContaBtn({ onPress }: Props) {
+export function ContaBtn({ text = 'Sua Conta', onPress }: Props) {
 
     return (
         <View style={{ opacity: 0.88 }}>
@@ -15,7 +16,7 @@ export function ContaBtn({ onPress }: Props) {
                 style={styles.btn}
                 onPress={onPress}
             >
-                <Text style={styles.txtBtn}>Sua Conta</Text>
+                <Text style={styles.txtBtn}>{text}</Text>
             </TouchableOpacity>
         </View>
     );

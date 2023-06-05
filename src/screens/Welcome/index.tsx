@@ -21,14 +21,10 @@ export function Welcome({ navigation }: any) {
 
                     </Text>
 
-                    {/* <View style={{ alignItems: 'center' }}>
-                        <Image style={{ width: 150, height: 150, borderRadius: 75 }} source={{ uri: 'https://mega.ibxk.com.br/2015/08/04/04183918599721.jpg?ims=610x' }}></Image>
-                    </View> */}
-
                     <Text style={styles.tx1}>
 
                         Aqui você fecha a conta do{'\n'}
-                        <Text style={{ fontWeight: 'bold' }}>seu </Text>
+                        <Text style={{ fontWeight: 'bold', color: '#2f2f2f' }}>seu </Text>
                         jeito!
 
                     </Text>
@@ -37,7 +33,7 @@ export function Welcome({ navigation }: any) {
 
                         Deixe os cálculos com a{'\n'}
                         gente e
-                        <Text style={{ fontWeight: 'bold' }}> relaxe...</Text>
+                        <Text style={{ fontWeight: 'bold', color: '#2f2f2f' }}> relaxe...</Text>
 
                     </Text>
                 </View>

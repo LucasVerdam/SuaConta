@@ -19,15 +19,17 @@ export const styles = StyleSheet.create({
     },
 
     tx1: {
-        fontSize: 23,
+        fontSize: 22,
         textAlign: 'left',
-        paddingLeft: 15
+        paddingLeft: 15,
+        color: '#3f3f3f'
     },
 
     tx2: {
         fontSize: 22,
         textAlign: 'right',
-        paddingRight: 15
+        paddingRight: 15,
+        color: '#3f3f3f'
     }
 
 });

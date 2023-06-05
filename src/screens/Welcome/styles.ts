@@ -11,22 +11,24 @@ export const styles = StyleSheet.create({
     },
 
     title: {
-        fontSize: 35,
+        fontSize: 40,
         textAlign: 'center',
-
+        color: themes.colors2.preto,
     },
 
     tx1: {
-        fontSize: 22,
+        fontSize: 24,
         textAlign: 'left',
-        paddingLeft: 15
+        paddingLeft: 15,
+        color: '#3f3f3f',
     },
 
     tx2: {
-        fontSize: 22,
+        fontSize: 24,
         textAlign: 'right',
         marginBottom: 30,
-        paddingRight: 15
+        paddingRight: 15,
+        color: '#3f3f3f',
     }
 
 });

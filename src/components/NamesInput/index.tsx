@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { View, Text, TextInput, Alert } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { View, Text, TextInput, Alert, ScrollView, BackHandler, Keyboard } from 'react-native';
 
 import { global } from '../../context/ContaContext';
 import { AddBtn } from '../AddButton';
@@ -73,41 +73,32 @@ export function NamesInput() {
     }
 
     return (
+        <ScrollView>
+            <View style={{ maxHeight: 250 }}>
+                <Text style={styles.txt}>
+                    Quem vai pagar?
+                </Text>
 
-        <View>
-            <Text style={styles.txt}>
-                Quem vai pagar?
-            </Text>
+                <ScrollView>
+                    {nomes.map((i) => {
+                        return (
+                            <View
+                                key={i.id}
+                                style={styles.list}
+                            >
+                                <Text style={styles.listItem}>
+                                    {i.id + 1}. {i.nome}
+                                </Text>
+                            </View>
+                        );
+                    })}
+                </ScrollView>
+            </View>
 
 
-            {nomes.map((i) => {
-                return (
-                    <View
-                        key={i.id}
-                        style={styles.list}
-                    >
-                        <Text style={styles.listItem}>
-                            {i.id + 1}. {i.nome}
-                        </Text>
-                    </View>
-                );
-            })}
-
-            {/* <FlatList
-                style={styles.list}
-                data={nomes}
-                showsVerticalScrollIndicator
-                persistentScrollbar
-                renderItem={({ item }) => {
-
-                    return (
-                        <Text style={styles.listItem}>
-                            {item.id + 1}. {item.nome}
-                        </Text>
-                    );
-                }} /> */}
 
             <View key={key} style={styles.container}>
+
                 <TextInput
                     style={styles.input}
                     maxLength={16}
@@ -123,7 +114,6 @@ export function NamesInput() {
                         <PopBtn func={popOfList} /> : null}
                 </View>
             </View>
-        </View>
-
+        </ScrollView>
     );
 }

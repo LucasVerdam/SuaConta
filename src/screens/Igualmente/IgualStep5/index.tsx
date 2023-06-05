@@ -1,18 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Text, Alert } from 'react-native';
 
 import { MainBg } from '../../../components/MainBg';
 import { BackButton } from '../../../components/BackButton';
 import { Encerra } from '../../../components/EncerraBtn';
 import { Conta } from '../../../components/Conta';
+import { SaveModal } from '../../../components/SaveModal';
 
+import moment from 'moment';
 import { global } from '../../../context/ContaContext';
+
 import { styles } from './styles';
 
 
 export function IgualStep5({ navigation }: any) {
 
-    const { nomes, produtos, valores } = global()
+    const { stateData, nomes, produtos, valores } = global();
+
+    const [saveModal, setSaveModal] = useState(false);
+
 
     function zeraV() {
         nomes.map((i) => {
@@ -30,9 +36,21 @@ export function IgualStep5({ navigation }: any) {
     function end() {
 
         if (nomes.length > 0 || produtos.length > 0) {
-            Alert.alert('Cancelar conta?', 'Todos os dados serão apagados.', [
+            Alert.alert('Deseja salvar sua conta?', `Todos os dados serão apagados se não salvos!`, [
                 {
-                    text: 'Sim',
+                    text: 'Salvar',
+                    onPress() {
+                        setSaveModal(!saveModal)
+
+                        let date = moment()
+                            .utcOffset('-03:00')
+                            .format('DD/MM/YYYY');
+
+                        stateData(date);
+                    }
+                },
+                {
+                    text: 'Encerrar',
                     onPress() {
                         while (nomes.length > 0) {
                             nomes.pop();
@@ -46,12 +64,6 @@ export function IgualStep5({ navigation }: any) {
                         valores.trocoT = 0
 
                         navigation.navigate('Inicio');
-                    }
-                },
-                {
-                    text: 'Não',
-                    onPress() {
-                        null
                     }
                 }
             ])
@@ -79,6 +91,12 @@ export function IgualStep5({ navigation }: any) {
                 <Text style={styles.title}>Sua Conta</Text>
 
                 <Conta />
+
+                <SaveModal
+                    nav={navigation}
+                    modal={saveModal}
+                    modalVis={setSaveModal}
+                />
             </>
         </MainBg >
 

@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "Sua Conta",
+    "name": "SuaConta",
     "slug": "sua-conta",
-    "version": "1.0.1",
+    "version": "1.2.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -25,7 +25,7 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       },
-      "versionCode": "2",
+      "versionCode": 3,
       "package": "com.lucasverdam.suaconta"
     },
     "web": {

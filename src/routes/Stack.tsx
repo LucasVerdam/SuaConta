@@ -28,6 +28,8 @@ import { Igual } from "../screens/Help/Igual";
 import { Mista } from "../screens/Help/Mista";
 import { End } from "../screens/Help/End";
 
+import { Saves } from "../screens/Historic/Saves";
+import { Saved } from "../screens/Historic/Saved";
 
 const Stack = createNativeStackNavigator();
 
@@ -60,6 +62,9 @@ export function StackNav() {
             <Stack.Screen name="Igual" component={Igual} />
             <Stack.Screen name="Mista" component={Mista} />
             <Stack.Screen name="End" component={End} />
+
+            <Stack.Screen name="Saves" component={Saves} />
+            <Stack.Screen name="Saved" component={Saved} />
         </Stack.Navigator>
     );
 }

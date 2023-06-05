@@ -33,15 +33,15 @@ export const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
 
-        backgroundColor: themes.colors2.pele
+        backgroundColor: themes.colors2.azulcla
     },
 
     plateB3: {
         height: circleWidth / 1.5,
         width: circleWidth / 1.5,
         borderRadius: circleWidth / 2,
-        opacity: 0.9,
-        backgroundColor: themes.colors2.azulcla
+        opacity: 0.6,
+        backgroundColor: themes.colors2.pele
     },
 
     plateT1: {
@@ -65,14 +65,14 @@ export const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
 
-        backgroundColor: themes.colors2.pele
+        backgroundColor: themes.colors2.azulcla
     },
 
     plateT3: {
         height: circleWidth / 1.5,
         width: circleWidth / 1.5,
         borderRadius: circleWidth / 2,
-        opacity: 0.9,
-        backgroundColor: themes.colors2.azulcla
+        opacity: 0.6,
+        backgroundColor: themes.colors2.pele
     }
 });

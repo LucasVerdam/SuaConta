@@ -1,19 +1,26 @@
-import React from 'react';
-import { Text, Alert, ScrollView } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { View, Text, Alert, Modal, TouchableWithoutFeedback, BackHandler, Keyboard } from 'react-native';
 
 import { MainBg } from '../../../components/MainBg';
 import { NextButton } from '../../../components/NextButton';
 import { Encerra } from '../../../components/EncerraBtn';
 import { NamesInput } from '../../../components/NamesInput';
+import { ContactsBtn } from '../../../components/ContactsBtn';
+import { ContModal } from '../../../components/ContactsModal';
+
 
 import { useBackHandler } from '@react-native-community/hooks';
 
 import { global } from '../../../context/ContaContext';
 import { styles } from './styles';
 
+
 export function IgualStep1({ navigation }: any) {
 
     const { nomes, produtos, valores } = global()
+
+    /*     const [modalVis, setModalVis] = useState(false)
+     */
 
     useBackHandler(() => {
         return true
@@ -76,17 +83,18 @@ export function IgualStep1({ navigation }: any) {
     }
 
     return (
-
         <MainBg
             backBtn={<Encerra onPress={() => { end() }} />}
             nextBtn={<NextButton onPress={() => { nextStep() }} />}
         >
             <>
                 <Text style={styles.title}>Igualmente</Text>
-                <ScrollView>
-                    <NamesInput />
-                </ScrollView>
+
+                <NamesInput />
             </>
+            {/* <ContModal modal={modalVis} modalVis={setModalVis} />
+
+                <ContactsBtn modal={modalVis} setModal={setModalVis} /> */}
         </MainBg >
 
     );

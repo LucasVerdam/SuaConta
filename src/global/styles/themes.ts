@@ -6,13 +6,14 @@ export const themes = {
         preto: '#3f3f3f',
         branco: '#FFF',
         azulesc: '#ED5E37',
-        azulcla: '#D9D5FF',
+        azulcla: '#E1E1EF',
         laranja: '#f79983',
         vermelho: '#f45',
         pele: '#BFFB60',
         pelecla: '#fcfae3',
         cinzaTxt: '#252A36',
-        cinzaBg: '#D9D5FF'
+        cinzaBg: '#E1E1EF'
+
     },
 
     heigth: {

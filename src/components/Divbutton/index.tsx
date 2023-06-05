@@ -1,10 +1,10 @@
 import React from 'react';
-import { Text, TouchableOpacity, Image, ImageProps, View } from 'react-native';
+import { Text, TouchableOpacity, Image, ImageProps, View, ImageSourcePropType } from 'react-native';
 import { styles } from './styles';
 
 interface Props extends ImageProps {
     nome: string;
-    source: ImageProps;
+    source: ImageSourcePropType;
     toScreen: string;
     navigation: any;
 }

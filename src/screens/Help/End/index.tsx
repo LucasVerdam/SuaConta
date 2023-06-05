@@ -22,8 +22,14 @@ export function End({ navigation }: any) {
                     <Text style={styles.tx1}>
 
                         Ao final de cada operação{'\n'}
-                        você verá um <Text style={{ fontWeight: 'bold' }}>
-                            relatório{'\n'}detalhado!</Text>
+                        você verá um
+                        <Text style={{ fontWeight: 'bold', color: '#2f2f2f' }}>
+                            {'\n'}relatório detalhado
+                        </Text> da{'\n'}
+
+                        <Text style={{ fontWeight: 'bold' }}>
+                            Sua Conta!
+                        </Text>
                     </Text>
 
                 </View>

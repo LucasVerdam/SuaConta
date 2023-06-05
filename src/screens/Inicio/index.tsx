@@ -4,21 +4,18 @@ import { View, Text } from "react-native";
 import { MainBg } from "../../components/MainBg";
 import { DivButton } from '../../components/Divbutton'
 import { HelpBtn } from "../../components/HelpBtn";
+import { Historic } from "../../components/HistoricBtn";
 
 import user from '../../assets/user.png'
 import users3 from '../../assets/users3.png'
 import users4 from '../../assets/users4.png'
-
-import { useBackHandler } from '@react-native-community/hooks'
 
 import { styles } from "./styles";
 
 
 export function Inicio({ navigation }: any) {
 
-
     return (
-
         <MainBg>
             <>
                 <View style={styles.body}>
@@ -51,6 +48,8 @@ export function Inicio({ navigation }: any) {
                 <HelpBtn
                     nav={navigation}
                 />
+
+                <Historic navigation={navigation} />
             </>
 
         </MainBg>

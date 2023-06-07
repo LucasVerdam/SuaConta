@@ -1,9 +1,11 @@
 # SuaConta
 Criação de aplicativo para fechar contas em estabelecimentos de Alimentos &amp; Bebidas de forma simples e organizada.
+<br>
 
-<div align="center" border-radius={10}>
+<div align="center">
 <img width="220px" height = "220px" src="https://github.com/LucasVerdam/SuaConta/blob/main/icon.png" alt="cover" />
 </div>
+<br>
 
 Tecnologias: React Native / Typescript / Expo/ Node.js / PostgreSql
 

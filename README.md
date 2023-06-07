@@ -1,7 +1,7 @@
 # SuaConta
 Criação de aplicativo para fechar contas em estabelecimentos de Alimentos &amp; Bebidas de forma simples e organizada.
 
-<div align="center">
+<div align="center" border-radius=10>
 <img width="220px" height = "220px" src="https://github.com/LucasVerdam/SuaConta/blob/main/icon.png" alt="cover" />
 </div>
 

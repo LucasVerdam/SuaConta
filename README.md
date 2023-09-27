@@ -1,5 +1,5 @@
 # SuaConta
-Criação de aplicativo para fechar contas em estabelecimentos de Alimentos &amp; Bebidas de forma simples e organizada.
+Aplicativo mobile para fechar contas em estabelecimentos de Alimentos &amp; Bebidas de forma simples e organizada.
 <br>
 
 <div align="center">
